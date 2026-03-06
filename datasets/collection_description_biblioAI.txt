@@ -1,0 +1,4 @@
+The objective of this analysis is to map and synthesize the evolution of "Bibliometric and Scientometric research applied to Management and Business disciplines." This collection serves as a comprehensive proxy for understanding how science mapping techniques have matured within these fields, leveraging a dataset characterized by diverse methodological approaches and a robust institutional network.
+
+
+More specifically, we collected all original research articles, written in English, that employ bibliometric or scientometric methods, including science mapping, citation analysis, co-citation analysis, and bibliographic coupling, within the management and business fields, as indexed by Web of Science, over the period 1985--2025.
