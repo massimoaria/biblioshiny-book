@@ -1,0 +1,817 @@
+DOI: 10.1177/1094428114562629
+CITATION_TYPE: author_year
+
+
+
+SECTION LINE SEPARATION: Abstract
+
+## Abstract
+
+We aim to develop a meaningful single-source reference for management and organization scholars interested in using bibliometric methods for mapping research specialties. Such methods introduce a measure of objectivity into the evaluation of scientific literature and hold the potential to increase rigor and mitigate researcher bias in reviews of scientific literature by aggregating the opinions of multiple scholars working in the field. We introduce the bibliometric methods of citation analysis, co-citation analysis, bibliographical coupling, co-author analysis, and co-word analysis and present a workflow for conducting bibliometric studies with guidelines for researchers. We envision that bibliometric methods will complement meta-analysis and qualitative structured literature reviews as a method for reviewing and evaluating scientific literature. To demonstrate bibliometric methods, we performed a citation and co-citation analysis to map the intellectual structure of the *Organizational Research Methods* journal.
+
+
+SECTION LINE SEPARATION: Introduction
+
+## Introduction
+
+Synthesizing past research findings is one of the most important tasks for advancing a particular line of research. Scholars have traditionally used two methods to make sense of earlier findings: the qualitative approach of a structured literature review and the quantitative approach of meta-analysis (Schmidt, 2008). We introduce a third method—science mapping—which is based on the quantitative approach of bibliometric research methods and is being increasingly used to map the structure and development of scientific fields and disciplines.
+
+Science mapping uses bibliometric methods to examine how disciplines, fields, specialties, and individual papers are related to one another. It produces a spatial representation of the findings analogous to geographic maps (Calero-Medina & van Leeuwen, 2012; Small, 1999). Science mapping is a combination of classification and visualization (Boyack & Klavans, 2014). The aim is to create a representation of the research area’s structure by partitioning elements (documents, authors, journals, words) into different groups. Visualization is then used to create a visual representation of the classification that emerges.
+
+Narrative literature reviews are subjected to bias by the researcher and often lack rigor (Tranfield, Denyer, & Smart, 2003). Bibliometric methods employ a quantitative approach for the description, evaluation, and monitoring of published research. These methods have the potential to introduce a systematic, transparent, and reproducible review process and thus improve the quality of reviews. Bibliometric methods are a useful aid in literature reviews even before reading begins by guiding the researcher to the most influential works and mapping the research field without subjective bias.
+
+Although bibliometric methods are not new (cf. Kessler, 1963; Small, 1973), they only started to attract widespread attention with the proliferation of easily accessible online databases with citation data (e.g., Thomson Reuters Web of Science [WOS], which contains the Social Science Citation Index [SSCI] and SCI data) and the development of software for conducting bibliometric analyses (e.g., BibExcel). Bibliometric methods have been used to map the fields of strategic management (e.g., Di Stefano, Verona, & Peteraf, 2010; Nerur, Rasheed, & Natarajan, 2008; Ramos-Rodriguez & Ruiz-Navarro, 2004), entrepreneurship (e.g., Gartner, Davidsson, & Zahra, 2006; Landström, Harirchi, & Åström, 2012; Schildt, Zahra, & Sillanpää, 2006), innovation (e.g., Fagerberg, Fosaas, & Sapprasert, 2012; Fagerberg & Verspagen, 2009), and others (see Appendix A for a full list of studies published in management and organization). Some research fields (e.g., innovation, entrepreneurship, strategy) have more rapidly embraced bibliometric methods, while others (e.g., organizational behavior, psychology) have been slower. We believe this is because the knowledge base of the former is closer to bibliometric methods and that this represents a big opportunity for researchers working in those fields that have yet to start publishing bibliometric studies.
+
+Bibliometric methods allow researchers to base their findings on aggregated bibliographic data produced by other scientists working in the field who express their opinions through citation, collaboration, and writing. When these data are aggregated and analyzed, insights into the field’s structure, social networks, and topical interests can be put forward. The use of bibliometric analysis is growing rapidly. The median year of publication of bibliometric studies in management and organization is 2011, meaning that over half the articles were published in the past three years. The authors’ anecdotal experience also suggests that management scholars are becoming ever more interested in using bibliometric methods to supplement the subjective evaluation of literature reviews. Notwithstanding this growing interest, there are hardly any guidelines for conducting structured literature reviews with bibliometric methods.
+
+The purpose of this article is to develop a meaningful single-source reference for management and organization scholars interested in bibliometric methods. The article’s main contribution is the development of recommended workflow guidelines for carrying out bibliometric studies. We synthesized the guidelines from 81 bibliometric studies in management and organization (details about the selection and a full study list are available in Appendix A) and bibliometric methodology literature. We demonstrated the use of these guidelines by performing a bibliometric analysis of the *Organizational Research Methods* journal. Given that the use of bibliometric methods is on the rise and there is a dearth of guidance on how to use these methods, this article may provide a valuable reference for scholars interested in bibliometric methods.
+
+SECTION LINE SEPARATION: Bibliometric Methods
+
+## Bibliometric Methods
+
+Almost five decades ago, Derek J. de Solla Price (1965) proposed scientific methods of science for studying science (Boyack, Klavans, & Börner, 2005). Bibliometric methods (e.g., co-citation analysis, bibliographic coupling) use bibliographic data from publication databases to construct structural images of scientific fields. They introduce a measure of objectivity into the evaluation of scientific literature (Garfield, 1979) and can be used to detect informal research networks, namely, ‘‘invisible colleges,’’ that exist under the surface but are not formally linked (Crane, 1972; Price, 1965). These groups share research interests and have underlying contacts through personal communication, conferences, and summer schools that are invisible to the outsider. Citation images of research fields, aggregated through time, reflect authors’ judgments on the subject matter, methodology, and the value of other writers’ work (White & McCain, 1998).
+
+Bibliometric methods have two main uses: performance analysis and science mapping (Cobo, López-Herrera, Herrera-Viedma, & Herrera, 2011a). Performance analysis seeks to evaluate the research and publication performance of individuals and institutions. Science mapping aims to reveal the structure and dynamics of scientific fields. This information about structure and development is useful when the researcher’s aim is to review a particular line of research. Bibliometric methods introduce quantitative rigor into the subjective evaluation of literature. They are able to provide evidence of theoretically derived categories in a review article.
+
+In the following section we will introduce the five main bibliometric methods. The first three use citation data to construct measures of influence and similarity: citation analysis, co-citation analysis, and bibliographical coupling. Co-author analysis uses co-authorship data to measure collaboration. Co-word analysis finds connections among concepts that co-occur in document titles, keywords, or abstracts. A summary of bibliometric methods with their strengths and weaknesses is provided in Table 
+
+1.
+
+Most bibliometric studies provide a 
+
+*citation analysis* of the research field, usually in the form of top-N lists of the most cited studies, authors, or journals in the examined area. Citations are used as a measure of influence. If an article is heavily cited, it is considered important. This proposition rests on the assumption that authors cite documents they consider to be important for their work. Citation analysis can provide information about the relative influence of the publications, but it lacks the ability to identify networks of interconnections among scholars (Usdiken & Pasadeos, 1995).
+
+*Co-citation analysis* (McCain, 1990) uses co-citation counts to construct measures of similarity between documents, authors, or journals. Co-citation is defined as the frequency with which two units are cited together (Small, 1973). A fundamental assumption of co-citation analysis is that the more two items are cited together, the more likely it is that their content is related. Different types of co-citation can be utilized, depending on the unit of analysis: document co-citation analysis, author co-citation analysis (McCain, 1990; White & Griffith, 1981; White & McCain, 1998), and journal co-citation analysis (McCain, 1991). Co-citation connects documents, authors, or journals according to the way writers use them. This is a rigorous grouping principle repeatedly performed by subject-matter experts who cite publications they deem valuable and/or interesting. Because the publication process is time-consuming, the co-citation image reflects the state of the field some time before, not necessarily how it looks now or how it may look tomorrow. It is a dynamic measure that changes through time. When examined over time, co-citations are also helpful in detecting a shift in paradigms and schools of thought (Pasadeos, Phelps, & Kim, 1998).
+
+Document co-citation analysis connects specific published documents (research articles, books, editorials, or other published material). Author co-citation analysis (ACA) connects bodies of writings by a person and therefore the authors who produced them (White & Griffith, 1981). ACA can identify important authors and connect them through citation records (White & McCain, 1998). What is mapped is an author’s citation image. Journal co-citation analysis (JCA) aims to connect related scientific journals.
+
+A special form of co-citation is tri-citation analysis (Marion, 2002; McCain, 2009; McCain & McCain, 2002), which examines the ‘‘intellectual fellow travelers’’ of a particular author or publication by analyzing works that have been co-cited with them. It has the potential for researching the legacy of important authors or seminal studies. Tri-citation is a variant of co-citation analysis where the focal author or publication is always one of the cited publications and provides the context for co-citation analysis. For instance, the seminal paper on absorptive capacity (Cohen & Levinthal, 1990) is one of the most influential papers in strategy and innovation. To examine the context of its influence, one could produce a tri-citation analysis to connect all pairs of publications that are cited with Cohen and Levinthal (1990). This method could be especially appropriate for special issues that celebrate anniversaries of important publications or are published in honor of important authors.
+
+Although *bibliographic coupling* (Kessler, 1963) is a decade older than co-citation (Small, 1973), co-citation has been more frequently used for mapping science (Zhao & Strotmann, 2008).
+
+### Table 
+
+1. Summary of Bibliometric Methods
+
+.
+
+### Workflow for Bibliometric Studies
+
+The following steps outline the general workflow as synthesized in Figure 1:
+
+*   **Step 1: Research design**     *   a. What is the research question (knowledge base, research front, social network)?
+    *   b. Choose the appropriate method for the research question (co-citation, bibliographic coupling, co-word, co-author, direct citation, hybrid methods).
+*   **Step 2: Compilation of bibliometric data**     *   a. Select (or construct) the appropriate database (SSCI, Scopus or other).
+    *   b. Filter and export the document bibliographic data (search criteria, journal selection, manual filtering, citation threshold value filtering).
+*   **Step 3: Analysis**     *   a. Choose the appropriate bibliometric software (BibExcel, Sitkis, SciMat, Microsoft Excel, ...).
+    *   b. Clean the data.
+    *   c. If necessary, produce similarity matrix for statistical software.
+    *   d. Identify subgroups with chosen method (MDS, PCA, cluster analysis, network analysis).
+*   **Step 4: Visualization**     *   a. Choose the preferred visualization method (MDS, Network Analysis).
+    *   b. Select the appropriate software to implement visualization (UCINET, Pajek, Gephi, R iGraph, Citespace II, ...).
+*   **Step 5: Interpretation**     *   Describe and interpret the findings.
+
+Bibliographic coupling uses the number of references shared by two documents as a measure of the similarity between them. The more the bibliographies of two articles overlap, the stronger their connection. The difference between co-citation analysis and bibliographic coupling is visually presented in Figure 
+
+2.
+
+The number of references shared between two documen
+
+ts is static over time (i.e., for the relationship between two documents it does not matter when the analysis is conducted) as the number of references within the article is unchanged, while relatedness based on co-citation develops with citation patterns. As citation habits change, bibliographic coupling is best performed within a limited timeframe (Glänzel & Thijs, 2012). It is best to analyze publications from roughly the same period of time (i.e., it makes no sense to couple a publication issued in 1964 with a publication issued in 2012). A bibliographic coupling connection is established by the authors of the articles in focus, whereas a co-citation connection is established by the authors who are citing the examined works.
+
+When two documents are highly co-cited, this means that each individual document is also highly individually cited (Jarneving, 2005). This indicates that documents selected through co-citation thresholds are deemed more important by the researchers who are citing them. Yet the bibliographic coupling measure cannot be used in such a way, so identifying which documents are more important than others is a challenge when undertaking bibliographic coupling. However, this is also a weakness of co-citation analysis: It carries more information for highly cited documents but is much less reliable for clustering smaller niche specialties that are formed by less cited documents.
+
+The choice of which method to employ depends on the goals of the analysis. To map a current research front, bibliographical coupling might be used while to map older papers, co-citation could be a better choice (Small, 1999). The latest studies show that the accuracy of bibliographic coupling in representing a research front is better than that of a co-citation analysis (Boyack & Klavans, 2010).
+
+There are several limitations of citation-based bibliometric methods (citation analysis, co-citation analysis, and bibliographical coupling). Based solely on the bibliometric data, it is impossible to establish the reason that a particular publication was cited. Different citations of the same publication can be made for many different reasons. The articles could be citing literature to refute it (negative citations). It is quite possible for bad scientific work to receive more citations than mere mediocre work (Wallin, 2005). However, citations for negative reasons are extremely rare and scientists generally do not criticize previous literature too much (Garfield, 1979). And even then, it is not necessarily valid to assume that critics are necessarily right, thus the critiqued literature is likely to contain some merit. Citation-based metrics could be biased due to self-citation in the form of author self-citation (citing publications where one is a co-author) or team self-citation (citing publications authored by one’s collaborators). These practices tend to increase citation frequencies and are thus a manipulation, although one would have to publish a tremendous amount to reasonably increase the citation frequencies.
+
+Co-author analysis examines the social networks scientists create by collaborating on scientific articles (Acedo, Barroso, Casanueva, & Galan, 2006). A relationship between two authors is established when they co-publish a paper (Lu & Wolfram, 2012). Co-authoring scientific publications is presumed to be a measure of collaboration. Co-authorship reflects stronger social ties than other relatedness measures, which makes it particularly suitable for examining social networks rather than intellectual structures of research fields. Further, because bibliographic data contain information about authors’ institutional affiliations and their geographical location, co-author analysis can examine the issues of collaboration on the level of institutions and countries.
+
+Co-authorship as a measure of collaboration assumes that authoring a publication is synonymous with being responsible for the work done. However, just because a person’s name appears as a co-author of a scientific article, it is not necessarily because they contributed a significant amount of work but could be purely "honorary authorship" for social or other reasons (Katz & Martin, 1997). On the other hand, there might be scientists who contributed to the work but whose names do not appear on the author sheet.
+
+Co-word analysis (Callon, Courtial, Turner, & Bauin, 1983) is a content analysis technique that uses the words in documents to establish relationships and build a conceptual structure of the domain. The idea underlying the method is that when words frequently co-occur in documents, it means that the concepts behind those words are closely related. It is the only method that uses the actual content of the documents to construct a similarity measure, while the others connect documents indirectly through citations or co-authorships. The output of co-word analysis is a network of themes and their relations that represent the conceptual space of a field. This semantic map helps to understand its cognitive structure (Börner, Chen, & Boyack, 2003). A series of such maps produced for different time periods can trace the changes in this conceptual space (Coulter, Monarch, & Konda, 1998). Co-word analysis can be applied to document titles, keywords, abstracts, or full texts. The unit of analysis is a concept, not a document, author, or journal.
+
+The quality of results from co-word analysis depends on variety of factors—the quality of keywords, the scope of the database, and the sophistication of statistical methods used for analysis (He, 1998). Solely using keywords for co-word analysis is a problem for two reasons. First, many journals’ bibliographic data do not contain keywords. Second, relying just on keywords suffers from so-called indexer effect—where the validity of the map is dependent on whether the indexers captured all relevant aspects of the text. The solution is to use abstracts or full texts, but this introduces noise into the data as the algorithms have difficulty distinguishing the importance of words in large corpuses of text.
+
+The current bibliometric landscape is dominated by co-citation analysis, which is used in the majority of bibliometric studies in management and organization. Bibliographic coupling is a neglected method with great potential for further use in the management domain. It is only after 2012 that the first three studies in management and organization using bibliographic coupling were published (Hanisch & Wald, 2012; Nosella, Cantarello, & Filippini, 2012; Vogel & Güttel, 2013). The limited use of bibliographical coupling partially stems from historical circumstances (co-citation analysis inventor Henry Small’s involvement with the Institute for Scientific Information, which played a key part in the development of bibliometrics) and partly from its own limitations as a method (limitation to short time spans, being unable to use citation threshold filtering). However, it is especially useful for mapping research fronts and emerging fields where citation data do not exist or smaller subfields that are not cited enough to produce reliable connections by co-citation analysis.
+
+Our search found 81 studies that used bibliometric methods in management and organization. Two independent researchers coded and analyzed the studies to determine the methods used, the databases, the software, and other characteristics. We describe the details of the selection and coding and list all the studies in Appendix A. The descriptive statistics for coded categories (the methods, databases, and software used) are summarized in Table 2.
+
+SECTION LINE SEPARATION: Bibliometric Methods and Traditional Methods of Review
+
+## Bibliometric Methods and Traditional Methods of Review
+
+In recent years, the volume of scientific research increased dramatically. It is becoming increasingly difficult for researchers to keep track of relevant literature in their field. This fact calls for the use of quantitative bibliometric methods that can handle this wealth of data, filter the important works through estimating their impact, and discover the underlying structure of a field. Researchers and especially doctoral students need to be equipped with skills that are able to make sense of this information explosion.
+
+Traditional methods of review and evaluation of scientific literature are meta-analysis and structured literature review. Meta-analysis seeks to synthesize empirical evidence from quantitative studies (Aguinis, Pierce, Bosco, Dalton, & Dalton, 2011). It requires that the researcher chooses studies based on the exact relationships they wish to explore (Raghuram, Tuertscher, & Garud, 2010) and aggregates multiple findings on these relationships into one overall finding. This is a very powerful method but inherently limited in the type and breadth of studies it can analyze. On the other hand, structured literature reviews are able to handle the diversity of studies and methodological approaches. Such reviews can provide in-depth analysis of literature and provide an understanding of contextual issues (Raghuram et al., 2010). However, this process is time-consuming so the number of analyzed works is limited and prone to researcher’s biases. It is a real possibility that important studies could be excluded.
+
+Science mapping with bibliometric methods offers a different perspective on the field. It can analyze any type of study as long as connections among studies exist in the corpus of analyzed studies. Compared with structured literature review, science mapping has more macro focus and aims to find patterns in the literature as body of work. While traditional literature review provides depth, bibliometric methods can handle a wide breadth of hundreds, even thousands, of studies. They can provide graphical description of a research field.
+
+We believe bibliometric methods are not a substitute for but a complement to traditional methods of review. Even when used in an ad hoc manner, they can provide useful information about the research field to the researcher: which are the important publications and authors and what is the structure of the field. Bibliometric methods can be used in standalone bibliometric analysis articles or can provide additional information for use in structured literature reviews.
+
+Bibliometric methods, when used correctly, can provide increased objectivity in literature reviews. They enable the researcher to look behind the scenes and base their opinions on the aggregated opinions of the scholars working in the field. Bibliometrics can help journal editors to evaluate past publications, design new policies, and make editorial decisions. Additionally, bibliographic data can be used as an input to other quantitative statistical methods that provide further insight and can test hypotheses related to the structure and development of a field.
+
+SECTION LINE SEPARATION: Recommended Workflow for Conducting Science Mapping Studies
+
+# Recommended Workflow for Conducting Science Mapping Studies
+
+Based on the established practices and bibliometric methodology literature, we propose recommended workflow guidelines for science mapping research with bibliometric methods. This is not intended to be a detailed how-to guide but an overview of the process with the options (methods, databases, software, etc.) available to scholars and the decisions they have to make at each stage of the research.
+
+The recommended workflow is presented in Figure 
+
+1. We delineate a five
+
+-step procedure for conducting science mapping in management and organization. First, researchers should define the research question(s) and choose the appropriate bibliometric methods that are able to answer the question(s). Second, researchers need to select the database that contains bibliometric data, filter the core document set, and export the data from the selected database. Sometimes this step involves constructing one’s own database. Third, bibliometric software is employed for analysis. Alternatively, researchers can write their own computer code to accomplish this step. Results of the bibliometric analysis can be further analyzed with statistical software to identify document subgroups that represent research specialties. Fourth, researchers must decide which visualization method is to be used on the results of the third step and employ appropriate software to prepare the visualization. Finally, the results must be interpreted and described. We have organized the article according to these stages of the research process.
+
+SECTION LINE SEPARATION: Step 1: Research Design
+
+## Step 1: Research Design
+
+The first, highly important step in any bibliometric study is to design the research. Researchers need to define the research question and choose an appropriate bibliometric method to answer it. Different bibliometric methods are suitable for answering different research questions. We summarized typical research questions suitable for different bibliometric methods in Table 
+
+3.
+
+Citation is primarily a measure of impact
+
+, so the major ability of citation analysis is to find the documents, authors, and journals that are the most influential in a particular research stream. Co-citation analysis and bibliographical coupling use citation practices to connect documents, authors, or journals. As such, they are ideally suitable for answering structural questions about research fields.
+
+Since co-citation is applied to the cited articles, it is capable of identifying the knowledge base of a topic/research field and its intellectual structure. The knowledge base of a field is the set of articles most cited by the current research. This is sometimes also referred to as the "intellectual base" (Persson, 1994). The structure of the knowledge base is called the intellectual structure and refers to the examined scientific domain’s research traditions, their disciplinary composition, influential research topics, and the pattern of their interrelationships (Shafique, 2013).
+
+***
+
+*Note: The percentages do not necessarily add up to 100% as studies can use multiple methods or units of analysis.* publications are the foundations on which current research is being carried out and contain fundamental theories, breakthrough early works, and methodological canons of the field.
+
+The concept of research front was introduced by Price (1965) and is used to describe current scientific papers that cite the publications in the knowledge base. At any given time, these papers are recently published papers that represent the state of the art of a scientific field. Examining the research front of a topic or research field is a task particularly suitable for bibliographical coupling since this method uses reference lists for coupling and does not require the documents to be cited in order to connect them. It is performed on citing publications as opposed to co-citation analysis, which is performed on cited publications. Most of the bibliometric studies in management and organization examine the knowledge base, whereas there is a distinct lack of research front analysis. This could be attributed to the popularity of co-citation and represents an opportunity for the use of bibliographical coupling.
+
+Boyack and Klavans (2010) differentiate between co-citation clustering and co-citation analysis. Co-citation clustering is simply the formation of clusters of cited documents, while co-citation analysis requires the additional step of assigning the research front papers to co-citation clusters. This latest step is most often not performed in bibliometric studies. One of the problems with co-citation clustering is that the analyzed set of documents (co-cited documents) is not the same as the starting set of documents (core documents). Consequently, co-citation clustering is more appropriate for studying the intellectual foundations of research than for evaluating the current research frontier. Publications in co-citation clusters can be connected to the research front publications that are citing them. Unfortunately, most bibliometric software does not have this capability, so it has to be done manually. One way to do this is to import bibliometric data into a relational database and find the research front publications that are responsible for co-citation links in each cluster through search queries. Co-citation can be used to examine the research front of a specified domain, but because it requires an intermediate step of matching cited and citing clusters, the resulting research front clusters will contain more noise than when derived from bibliographical coupling.
+
+**Citation analysis** * Which authors most influenced the research in a journal?
+* Which journals and disciplines had the most impact on a research stream?
+* What is the ‘‘balance of trade’’ between journals/disciplines?
+* Who are the experts in a given research field?
+* What is the recommended ‘‘reading list’’ for a specific area?
+
+**Co-citation analysis** * What is the intellectual structure of literature X?
+* Who are the central, peripheral, or bridging researchers in this field?
+* How has the diffusion of the concept through research literature taken place?
+* What is the structure of the scientific community in a particular field?
+* How has the structure of this field developed over time?
+
+**Bibliographical coupling** * What is the intellectual structure of recent/emerging literature?
+* How does the intellectual structure of the research stream reflect the richness of the theoretical approaches?
+* How has the intellectual structure of small niche X developed through time?
+
+**Co-author analysis** * Are authors from different disciplinary backgrounds working together on a new research field, or do they remain within disciplinary boundaries?
+* Which factors determine co-authorship?
+* What is the effect of collaboration on the impact?
+* Are co-authored articles more cited?
+* Do more prolific authors collaborate more frequently?
+* Are internationally co-authored papers more cited?
+* What is the social structure of the field?
+
+**Co-word analysis** * What are the dynamics of the conceptual structure of a field?
+* Uncover the conceptual building blocks of a literature.
+* What are the topics associated with a particular line of research?
+* Track the evolution of concept X.
+
+Co-author analysis is particularly suitable for studying research questions involving scientific collaboration. This method can analyze co-authorship patterns among contributing scientists and produce a social network of the invisible college that makes up the research field. Researchers can combine co-authorship data with citation data to estimate the effect of collaboration on research impact. For instance, Fischbach, Putzke, and Schoder (2011) examined co-authorship networks within the Electronic Markets journal to test various hypotheses of how authors’ embeddedness in co-authorship networks affects the impact of their research. Establishing an author’s disciplinary background can reveal interdisciplinary collaborations. Raasch, Lee, Spaeth, and Herstatt (2013) studied the emergence of open-source innovation research to find that interdisciplinarity decreases when the research field becomes established. Co-word analysis uses the text of the titles, author-designated keywords, abstracts, or even full texts to construct a semantic map of the field. This method can be used to discover linkages among subjects in a research field and trace its development (He, 1998).
+
+Science mapping is performed at a specific point in time to represent a static picture of the field at that moment. However, the core document set can be divided into multiple time periods to capture the development of the field over time. Each time period’s bibliometric data are analyzed separately and compared to find changes in the field’s structure. This longitudinal analysis can reveal how particular groups within an intellectual structure emerge, grow, or fade away.
+
+While these are the most basic types of research questions, the authors of bibliometric studies have started to examine more sophisticated variants of questions. Some authors have considered differences in publication and citation practices between authors from different geographical regions, particularly between the North American and European traditions (Cornelius & Persson, 2006; Pilkington & Lawton, 2013; Usdiken & Pasadeos, 1995). Bibliometric methods can uncover influences about which even field experts might be unaware. Researchers often draw on publications from outside the field, but these publications are rarely mentioned in literature reviews (White & McCain, 1998), which are discipline-focused. Therefore, some recent studies tried to reveal the interdisciplinarity of particular research streams (e.g., Bernroider, Pilkington, & Córdoba, 2013; Raasch et al., 2013).
+
+SECTION LINE SEPARATION: Step 2: Compiling the Bibliometric Data
+
+# Step 2: Compiling the Bibliometric Data
+
+One of the crucial decisions authors of science mapping studies must make is how to limit the scope of their study and define which papers should be included in the set of core documents. Two main options for limiting the scope are available. The first is to search for selected keywords. Because not all journals publish keywords, the search should include article titles and abstracts. Special effort should be made to define search terms that accurately represent the examined field. To increase the validity of search terms, consulting a panel of scholars to determine appropriate keywords is a good practice (e.g., Chabowski, Samiee, & Hult, 2013). However, even when search terms are very carefully chosen, a database search usually finds studies that are not within the scope of the review. These unwanted publications influence the results of bibliometric analysis, introduce outliers into the cited publications, and reduce the validity of the results. A method to sift out unwanted documents is needed. This can be dealt with by reading abstracts and qualitatively determining which publications returned by the search are within the scope of the review. However, this method has the potential to introduce bias into the results. This bias can be mitigated by (a) defining beforehand the exact criteria used for selection and (b) having at least two researchers independently perform the selection.
+
+The second option is to limit the scope to articles published in a single or in a small number of journals. This selection method is especially appropriate when the goal is to analyze the publications within a single journal or when the publications in selected specialty journals represent a valid representation of the examined research field. Of course, these methods can be combined to perform a keyword search within a limited range of journals and qualitatively select the publications for bibliometric analysis. An interesting variation of selection is the approach introduced by Fagerberg, Landström, and Martin (2012), which relies on citations from handbooks from the fields of innovation, entrepreneurship, and science studies to define the core set of documents in each field.
+
+When the core document set has been selected, authors often exclusively use documents or journals that exceed some minimum citation threshold for the purpose of selecting only influential publications and limiting the core document set to a manageable size. This is sometimes necessary when bibliographic coupling or co-author analysis are used that perform the analysis on citing publications (i.e., the core document set). If the threshold is established on the number of total citations, newer publications are at a disadvantage, so a better practice would be to rank publications on citations per year. While co-word analysis is also performed on citing publications, the unit of analysis is a word, which means that thresholds should be established for word appearance.
+
+Co-citation analysis is performed on cited publications, which can be very numerous. Filtering through citation thresholds is thus also necessary on cited publications for two reasons: (a) to limit the analyzed set to a manageable size and (b) to ensure only cited publications that contain enough citation data for analysis are retained. If publications are not cited or are cited just a few times, it is not possible to perform a co-citation analysis, so in this case, filtering through the total number of citations is appropriate. Establishing the level of citation thresholds is a part of bibliometric analysis that is definitely more art than science. The choice also depends on whether the goal of the researcher is analysis of a wider, more inclusive set of cited publications or of a smaller, more focused selection. If the cited publications are selected too narrowly, some smaller subgroups will not be found.
+
+SECTION LINE SEPARATION: Bibliographic Databases
+
+## Bibliographic Databases
+
+The Social Science Citation Index, accessible online through Thomson Reuters Web of Science, is by far the most common source of bibliographic data. It provides data on documents published in the social sciences and the cited references they contain. Bibliographical data for indexed documents including article title, article type, authors, author institutional affiliations, keywords, abstract, number of citations, journal name, publisher name and address, publication year, volume, issue number, and a list of cited references is available for analysis. All journals indexed in SSCI are assigned one or more subject categories (e.g., Economics, Psychology) that can be used for filtering relevant publications. The SSCI was established by the Institute for Scientific Information (ISI), which is now part of Thomson Reuters. However, it is not without its limitations: The scope of journals covered by the SSCI is limited to those with an official impact factor. It takes time for newer journals to be included in the SSCI, so it does not contain data from ‘‘just launched’’ publications. The SSCI (WOS) database is the most frequently used database for bibliometric studies in management and organization. It contains enough data to make it suitable for most bibliometric analysis and is already included in most university subscriptions, so it is immediately available to researchers working in academic settings.
+
+An alternative source is the Scopus database. Started in 2004 and owned by Elsevier, it is recommended by some bibliometricians as having a wider coverage than the SSCI (SciTech Strategies, 2012). This broader coverage is useful for mapping smaller research areas that would be insufficiently covered by the SSCI (WOS) database. The importing of data from Scopus is supported by the most commonly used bibliometric software packages, but its use is not yet widespread among management and organization scholars as Scopus was employed by only three studies (cf. Gerdsri, Kongthon, & Vatananan, 2013; Hanisch & Wald, 2012; Walter & Ribiere, 2013). An additional advantage of Scopus is that it contains data for all authors in cited references, making author-based citation and co-citation analysis more accurate.
+
+Google Scholar has gained prominence among academics since it has become the most widely used tool for searching scientific publications. Google Scholar includes a broader range of publications than SSCI (WOS) and includes citation data, so it is a potentially useful database for bibliometric analysis. However, Google Scholar does not provide a user interface or API (application programming interface) to enable the exporting of a document set with cited references, which would be needed for bibliometric analysis. It would be potentially feasible to write a program that would download the data from Google Scholar, but Google’s policy is to not allow automatic downloading, so this approach is not stable and bound to be blocked by Google. Due to these shortcomings, Google Scholar currently cannot be easily used for bibliometric analysis.
+
+Some limitations of bibliometric methods are the consequence of the nature of data in bibliographic databases. The cited reference data from the SSCI only contain information about the first authors of cited publications, meaning that the contributions of second and other authors are underestimated. This is especially noticeable in some seminal, highly cited co-authored contributions (e.g., Dan Levinthal is the second author of the highly cited 1990 Cohen & Levinthal absorptive capacity paper; this omission alone is enough to produce a biased list of top cited authors). The SSCI does not cover all scientific literature—some relevant journals are not included. They do not encompass working papers and papers published in open archives like arXiv and SSRN. Important contributions could be missed as a consequence of this insufficient coverage. Another alternative to established online databases is for researchers to construct their own database based on several different sources.
+
+SECTION LINE SEPARATION: Step 3: Analysis
+
+# Step 3: Analysis
+
+The analysis begins with preprocessing. To achieve accurate results, it is necessary to clean the data. Although most bibliometric data are reliable, cited references sometimes contain multiple versions of the same publication and different spellings of an author’s names. Moreover, since authors are usually abbreviated by their surname and first initial, this poses a problem with some very common names (e.g., Lee, Smith) and authors with two first names (e.g., David Bruce Audretsch could appear as both ‘‘Audretsch D.’’ and ‘‘Audretsch D. B.’’). Cited journals might also appear in slightly different forms. Books have different editions, which can appear as different citations (e.g., Yin’s ‘‘Case Study Research: Design and Methods’’ could appear as Yin, 1984; Yin, 1994; or even Yin, 2009). While the choice of whether to aggregate different editions of books remains for the researcher, different spellings of authors and journals should be corrected when these are the units of analysis. Researchers should aggregate author or journal data under one spelling and eliminate all the others. This is especially important for author and journal co-citation analysis, co-author analysis, and citation analysis. Corrections can be made with more sophisticated tools that allow calculating similarities between text strings or through capabilities of bibliometric software packages.
+
+When performing co-word analysis, it is often desirable to reduce various representations of concepts to one form. A stemming algorithm is the procedure that transforms words to their root form. For example, the concept of ‘‘innovation’’ could appear in several forms: innovation (singular), innovations (plural), innovativeness (noun), innovative (adjective), and so on. A stemming algorithm would reduce all these different appearances to the root ‘‘innov’’, which would represent the concept of innovation. As demonstrated here, stemmed words can be difficult to read for humans, so replacing the root with the most common full word is advisable.
+
+SECTION LINE SEPARATION: Bibliometric Software
+
+## Bibliometric Software
+
+Several software tools are available to facilitate the bibliometric analysis of scientific literature. Bibliometric tools take raw bibliographic data (e.g., an export from Web of Science), perform bibliometric calculations, and calculate the similarity matrices between items (documents, authors, journals, words). They have some analytic capabilities but normally rely on exporting data for statistical and visualization software for further analysis. In this section, we will briefly introduce three bibliometric tools: BibExcel (Persson, Danell, & Wiborg Schneider, 2009), Sitkis (Schildt et al., 2006), and SciMAT (Cobo et al., 2012). BibExcel and Sitkis were the tools most often referenced in bibliometric analyses. Interestingly, several studies report using Microsoft Excel to perform bibliometric calculations.
+
+BibExcel was developed by Olle Persson (Persson et al., 2009) and is the software most used for performing bibliometric analysis in management and organization. Although its user interface cannot be described as being very friendly, it can be learned quickly and is very efficient. BibExcel can perform all bibliometric methods (co-citation, bibliographical coupling, co-author, and co-word analysis) and has many additional features (e.g., word stemmer to aid co-word analysis). Its website contains many tutorials on how to use the software for various bibliometric analyses. Exporting options include co-occurrence matrices for later use in statistical software and network formats that can be used in network analysis packages. BibExcel is easy to learn and very quick to operate. Its main drawbacks are the lack of advanced preprocessing capabilities for data cleaning and its quirky user interface. If the goal of the researcher is to produce quick bibliometric calculations and perform data cleaning and advanced analysis in other programs, BibExcel is the right choice.
+
+Sitkis (Schildt, 2005) was developed by Henri A. Schildt at the Helsinki University of Technology. It is a bibliometric data management tool that can be used for aiding reviews and bibliometric calculations. With Sitkis it is possible to perform basic data preprocessing tasks and perform co-citation and co-author analysis. Data can be exported to tab-delimited Excel-friendly text files that can also be used in UCINET network analysis software. One distinct feature of Sitkis is that it implements a dense network subgrouping algorithm—a clustering procedure developed especially for bibliometric analysis (Schildt & Mattsson, 2006). The tool is relatively simple to use but uses legacy technology (Access) for database storage and is no longer being actively developed. The last version of this software dates from 
+
+2005. We would thus recommend using this software option 
+
+predominantly if a researcher already has Sitkis experience.
+
+SciMAT (Cobo et al., 2012) is one of the newer additions to bibliometric software options. Developed by a research group at the University of Granada, SciMAT is software that covers the whole workflow of science mapping from data preprocessing to visualization. It has a better user interface and superior preprocessing capabilities for cleaning the data and is a more recent and open source. It guides the user through whole workflow, being in this sense more rigid than BibExcel. It is good software for carrying out a thorough science mapping procedure, but it is more difficult to do ‘‘quick and dirty’’ ad hoc analyses in SciMAT. Its main drawback is the current lack of a user interface to export data matrices that could be used in statistical software. Users can export the data for further analyses only through (undocumented) scripts or limit the analyses to those done in SciMAT.
+
+At least two other software options are worth mentioning. Loet Leydesdorff’s website stores a number of simple software programs that implement various bibliometric methods (Leydesdorff, 1999).
+
+These are very basic programs run from the command line that transform WOS data into matrices that can be used in statistical and network analysis software. Its use is very simple, but its preprocessing capabilities are very limited. CiteSpace II (Chen, 2006) is another option with comprehensive bibliometric capabilities. It has many features far beyond what is needed for basic science mapping, but the learning curve is pretty steep. For a comprehensive analysis of available bibliometric software and their features, see Cobo et al. (2011b).
+
+SECTION LINE SEPARATION: Identifying Subfields
+
+# Identifying Subfields
+
+Identifying subfields with quantitative analysis is one of the biggest strengths of bibliometric methods. Various dimensionality reduction techniques are applied. The most common are exploratory factor analysis, cluster analysis, multidimensional scaling (MDS), and network analysis community finding algorithms (Cobo et al., 2012). Researchers are advised to use several grouping methods simultaneously to check the robustness of the results.
+
+Exploratory factor analysis, cluster analysis, and multidimensional scaling require a similarity matrix (produced with bibliometric software) as an input for statistical software (e.g., SPSS, Stata, R). Bibliometric software produces a co-occurrence frequency matrix in which the elements of the matrix are co-citations (for co-citation analysis), shared reference counts (for bibliographical coupling), number of co-authored papers (for co-author analysis), or word co-occurrences (for co-word analysis). However, normalized similarity measures are often preferred to raw co-occurrence counts, for example, Pearson’s r, Salton’s cosine, and Jaccard index. These measures normalize the matrix and compensate for different occurrence levels among items. Normalization is especially recommended for cluster analysis as it is sensitive to scaling issues, but exploratory factor analysis and MDS benefit from normalization as well. Network analysis algorithms also use network topology to find network subgroups and can work with raw co-occurrence counts, so normalization of a similarity measure is not necessary (Wallace, Gingras, & Duhon, 2009).
+
+The similarity measure most often used is Pearson’s r correlation. However, its use has been the subject of considerable controversy in bibliometric methodological literature. Ahlgren, Jarneving, and Rousseau (2003) claimed that Pearson’s r does not satisfy mathematical requirements for a good similarity measure and suggested that other measures should be preferred. However, White (2003) showed that for practical purposes Pearson’s r is a valid and robust measure of similarity for the purpose of mapping research specialties that consistently produces interpretable maps.
+
+Exploratory factor analysis (EFA) with principal component analysis (PCA) as an extraction method is one of the most frequently used techniques for finding subgroups in bibliometric studies. Since no theoretical relationships between factors are expected in advance, PCA as an extraction method is appropriate (Conway & Huffcutt, 2003) but requires the researcher to specify the number of factors in advance. Several methods exist for choosing the number of factors: scree test, Kaiser’s criterion, and others. We suggest using these methods just as a starting point. Choosing the number of factors is a substantive as well as a statistical issue (Fabrigar, Wegener, MacCallum, & Strahan, 1999). Several solutions with various factors should be examined to determine their interpretability/practicality before the number of factors is determined. If too few factors are used, the latent structure is not revealed, while if too many factors are used, it becomes difficult to interpret the findings. Accordingly, several trials should be performed to arrive at the best representation of the data.
+
+One advantage of EFA is that because items (documents, authors, journals, words) can load on to more than one factor, it can demonstrate the breadth of contributions that span multiple factors. Important work is also often universal, so it would be assigned to multiple subgroups of publications (Börner et al., 2003). Items with loadings greater than 0.7 should be regarded as core contributions to that factor, and loadings larger than 0.4 should be reported as factor members (McCain, 1990). There are two types of rotation methods in FA: orthogonal and oblique. Orthogonal rotation assumes that factors are not correlated and works best when factors are independent (Zhao & Strotmann, 2008). Oblique rotation is useful when factors are correlated and can produce a component correlation matrix to indicate the degree of correlation between factors. Because bibliographic data represent subgroups of a research specialty, we can reasonably expect factors to be correlated (McCain, 1990), but if factors are uncorrelated, orthogonal and oblique rotations will give similar results (Conway & Huffcutt, 2003). Therefore, oblique rotation is the preferred method when dealing with bibliographic data.
+
+Hierarchical cluster analysis (HCA) is another frequently used technique for finding subgroups. This method produces a dendogram based on the similarity of analyzed items; the choice of where to cut the dendogram to produce clusters is left to the researcher. HCA has no generally accepted stopping rules to guide the researcher to the best set of clusters (McCain, 1990). There is a variety of HCA procedures: single linkage, complete linkage, average linkage, Ward’s method. Of these, Ward’s method is the most frequently used for bibliometric analysis. McCain (1990) found that both complete linkage and Ward’s method produce similar and interpretable results. Because all analyzed items are contained in the solution, filtering of unwanted items beforehand is necessary. Using absolute citation counts in a matrix is less appropriate for clustering algorithms as they produce a network in which the most cited publications dominate (Gmür, 2003).
+
+Multidimensional scaling (MDS) can analyze any kind of similarity matrix. It produces a map of objects in a low(usually two-) dimensional space by optimizing distances between objects to reflect a similarity measure. Items regarded as more similar are presented as closer on the map. The items, however, are not explicitly assigned to groups; this decision is left to the researcher. MDS is limited to small data sets as big maps become increasingly difficult to read and interpret. It does not produce explicit links between objects, and its major drawback is that there are no firm rules to interpret the nature of the resulting dimensions (Börner et al., 2003). Compared with other methods for identifying subfields in this section, MDS has serious limitations and few relative advantages.
+
+Network community finding algorithms have made several important advances in recent years due to the explosion of interest in the Internet, which can be analyzed with social network analysis methods. However, these advances are still not being exploited in bibliometric studies to a full extent, so network analysis algorithms continue to hold huge potential for the future. In this section, we will describe two effective community finding algorithms: the Louvain method (Blondel, Guillaume, Lambiotte, & Lefebvre, 2008) and the Islands algorithm (Zaveršnik & Batagelj, 2004). Several other network community finding methods exist that have not yet been used in bibliometric studies. For a detailed and comprehensive treatment of the various network community finding methods, see Fortunato (2010).
+
+The Louvain method (Blondel et al., 2008) has been found to be very fast for large networks and to provide excellent accuracy (Liu, Glänzel, & Moor, 2012). This method uses the notion of network modularity, which measures the meaningfulness of network division into communities. The Louvain algorithm starts with assigning each node to separate community. It then iterates through all communities, checking whether adding a node from one community to another causes an increase in modularity and choosing the change with greatest increase in modularity. It repeats the process until there is no change in community structure. The method works very well on co-citation networks and can be used on extremely large networks. The limitation of the Louvain method is that it assigns all network nodes to groups, so item filtering to include only important items is necessary beforehand. Sometimes there are items in the network that substantially do not belong to any group but are assigned one anyhow or the method produces artifacts—groups with just one node.
+
+The Islands algorithm (Zaveršnik & Batagelj, 2004) can be illustrated with a mountain range submerged in water (in our case, the height of the mountains represents similarity strength between units of analysis—documents, authors, journals, or words). When the water is drained, the highest peak appears as an island first, and then the lower peaks gradually emerge. These islands represent clusters of highly similar items. An important advantage of this algorithm is that it can uncover groups of publications with varying degrees of link intensity. In case of co-citation links, it enables less cited groups of items to be uncovered. In summary, a group of items represents a peak within a mountain range when within-group similarity links are stronger than those with out-of-group publications. The main advantage of the Islands algorithm is that the found groups (islands) are only a subset of the whole network, and so it is not necessary to limit the number of items beforehand. The groups that are found are very dense and cohesive but are usually smaller than those found with other methods because only the strongest members are included.
+
+Exploratory factor analysis, cluster analysis, and MDS provide complementary, often reinforcing results when used on the same or related similarity matrices (McCain, 1990). Several researchers found very consistent results when applying cluster analysis and exploratory factor analysis to the same bibliometric data (e.g., Di Stefano, Gambardella, & Verona, 2012; Samiee & Chabowski, 2012). The advantage of exploratory factor analysis over cluster analysis is that it does not force objects into groups (clusters) but is able to accommodate the universality of work, which can belong to multiple factors. This property of exploratory factor analysis can make a clear delimitation of subgroups difficult, but it can identify publications that serve as boundary spanners between different subtopics of research. However, Gmür (2003) found that factor analysis in the conditions of high structural complexity does not generate a true representation of co-citation clusters. Network analysis methods are a fresh approach to finding subgroups that has yet to take hold in bibliometric studies. We believe network analysis methods have several advantages that make them worth using: they are effective and accurate, do not require normalization of similarity matrices (so researchers can avoid the controversy over which similarity measure to choose), and the analysis can be done within the same software tool that is used for visualization.
+
+SECTION LINE SEPARATION: Step 4: Visualization
+
+# Step 4: Visualization
+
+The map of a field is primarily a visualization of its network structure. Traditionally, multidimensional scaling was the approach most often used for visualizing bibliometric data (White & McCain, 1998). MDS is a technique for creating maps from proximity matrices so that an underlying structure can be studied (McCain, 1990). However, MDS is gradually being supplanted by network analysis visualization methods.
+
+Network analysis produces visualizations of scientific fields in which network nodes represent units of analysis (e.g., documents, authors, journals, words) and network ties represent similarity connections. More strongly connected nodes are drawn closer together. Depending on the unit of analysis, several different types of maps of a scientific field can be constructed. The most common are maps based on documents. Author-based maps are also widespread (Börner et al., 2003) and come in two forms: Author co-citation maps are constructed to represent the intellectual structure of a field, while co-authorship maps are used to reveal the structure of scientific networks based on collaborations. Finally, semantic maps (i.e., co-word analyses) can be used to represent the cognitive structure of a field.
+
+Showing different units of analysis is possible on the same map with two-mode networks, but this has been used very rarely. An exception is Vogel (2012) where an innovative map of an entire management discipline featured connections among research field subgroups (document groups collapsed into clusters) and scientific journals. Zhao and Strotmann (2008) presented an alternative visualization of a research field in a two-mode network, where subgroups found by PCA are represented as type 1 nodes connected to the authors (type 2 nodes). Authors could be connected to several subgroups.
+
+The choice of layout algorithm determines the aesthetics and usefulness of network drawing. The most common layout algorithms are Kamada-Kawai and Fruchterman-Reingold. Both are members of the spring-embedder family of algorithms (Kobourov, 2012). These are typically useful for small networks (Boyack & Klavans, 2014) because the graph layouts generally have many local minima, which makes it difficult for algorithms to produce good layouts of large graphs. Fruchterman-Reingold aims to keep adjacent nodes close together, while Kamada-Kawai takes a graph-theoretic approach. It tries to minimize the difference between geometric distances between two nodes in a network drawing and the graph-theoretic pairwise distances. The latter are determined by the shortest path between the nodes. One recommended option is to first use the Kamada-Kawai algorithm for an approximate layout and to subsequently employ the Fruchterman-Reingold algorithm to improve the drawing (Collberg, Kobourov, Nagra, Pitts, & Wampler, 2003).
+
+Network analysis software can calculate centrality measures (e.g., degree, betweenness, closeness). These measures have different meanings depending on the network analyzed. In a co-authorship network, an author’s degree centrality represents how many other authors have written a paper with him (Fischbach et al., 2011). High betweenness centrality is an indicator that an author is a bridge between different research streams. Authors scoring high on closeness centrality can reach other authors in the network through a shorter chain.
+
+With the advancement of network analysis tools we see no compelling reason to continue using MDS for visualization purposes. Network analysis software can produce MDS-like visualizations but has many more options and features to choose from. The software packages most often used for network visualization are UCINET (Borgatti, Everett, & Freeman, 2002) and Pajek (Batagelj & Mrvar, 1998). Both of these software tools have a long history and a large number of features. Their main drawback is that the limited number of community finding algorithms that are implemented in these packages. In addition, their speed of development is slower compared to open-source tools like Gephi and the R iGraph package.
+
+Gephi is open-source network analysis and visualization software that is fast gaining traction in the social network analysis community. Its rapid development is due to its open-source nature and because it is more easily extendable than other options. Another visualization option is the statistical software R with its powerful iGraph package (also available in Python). A big advantage of iGraph package is that it has already implemented a large number of community finding algorithms. R is also a very flexible environment that can handle very different analysis tasks including PCA, MDS, and/or cluster analysis. Producing basic bibliometric calculations in specific bibliometric software and handling all other analysis in R is a very powerful and flexible option.
+
+One challenge researchers face is how to visualize the changes in the research field through several time periods. A good option to represent these changes is a bar graph, where each row represents a publication in the intellectual structure and the width of a bar left or right from the zero axis represents whether this publication was more or less influential than in the previous period. A good example of the use of this graph can be found in Shafique (2013, p. 74). When implementing co-word analysis, an additional option for visualization of the conceptual structure of a field are graphs called heat maps. These maps use warmer colors and bolded fonts to emphasize concepts that are frequently used, while words that are used only sporadically are shown in colder colors and subdued smaller fonts. An example of a heat map is shown in Figure 3, which visualizes the words in abstracts of research papers dealing with the high-tech firms published in management journals between 1973 and 
+
+1998. Two large groups of words can be distinguished
+
+: The first deals with the role of high-tech firms in economic growth, the second shows the words related to the management of high-tech firms.
+
+SECTION LINE SEPARATION: Step 5: Interpretation
+
+# Step 5: Interpretation
+
+The final step in bibliometric analysis is to interpret the findings. Bibliometrics is no substitute for extensive reading in the field. Documents that appear in the analysis need to be thoroughly examined to reach valid conclusions. Researchers with in-depth knowledge of the field have a distinctive advantage here. However, they need to be careful not to try to fit the analysis to their existing preconceptions, but the opposite: to use their knowledge to enhance the findings. Bibliometric methods will often reveal the structure of a field differently from the classification of traditional literature reviews, so these differences need to be reconciled. Science maps provide a starting point for analytical examination but are not an end in itself. Interpretation strategies in bibliometric analysis are dependent on the focus of the paper authors are writing. We argue there are three major types of focus bibliometric papers can have: focus on structure, focus on dynamics, and focus on a narrow research question.
+
+The first type of paper focuses on structure. The aim is to analyze the relations among structural elements (groups of publications, authors, concepts), find how they relate and influence each other, and examine their role in substantive questions the research field asks. Focus on dynamics is the second type of paper that can employ bibliometric methods. The goal of this type of paper is to track the development of a research field through time. Researchers should divide the bibliographic data into several multiyear periods and take snapshots of the structure of the field for each interval. Interpretation strategy would then try to explain how the structure changed and why this happened. It would determine which elements are new in a certain period and which are in decline. A good example of this type of focus is Vogel (2012), who tracked the development of the management discipline over several decades. His study used co-citation and network analysis to identify the theoretical perspectives that were dominant in each decade.
+
+An alternative type of paper is a focused paper with a very specific research question. Typically, these papers will have a small empirical bibliometric part that is used to illustrate or prove authors’ claims and extensive discussion of the relation of these claims with existing literature. An example of a focused question would be ‘‘Is research stream X over-reliant on...
+theoretical perspective Y?'' Researchers could then use citation analysis to prove that the research in field X is indeed highly influenced by the theoretical perspective Y and that references to other potentially useful theoretical perspectives are few or nonexistent. Other research goals could fall under this focus type. For instance, Volberda, Foss, and Lyles (2010) used bibliometric methods to investigate contextual factors that affect absorptive capacity and develop an integrative model that identifies the multilevel antecedents, process dimensions, and outcomes of absorptive capacity.
+
+SECTION LINE SEPARATION: The Intellectual Structure of Organizational Research Methods
+
+# The Intellectual Structure of Organizational Research Methods
+
+To demonstrate the use of bibliometric methods, we performed a bibliometric analysis of the Organizational Research Methods (ORM) journal. All steps necessary to reproduce this analysis are detailed in Appendix B. Readers can also repeat the analysis on their own data by following the steps with data of their chosen research field.
+
+We set out to examine the intellectual structure of the ORM journal. Our expectation was that this investigation would reveal which research methods are dominant within organizational research. We decided to use citation and co-citation analysis. With citation analysis, we aimed to find the most influential documents (books or articles) that were referenced in ORM. Co-citation data provided the structure of the knowledge base of ORM.
+
+We searched the Web of Science database for ‘‘Organizational Research Methods’’ in the publication name. The search returned 483 articles, but the analysis based on publication years revealed that the data for 1999 and 2000 were missing, so we decided to only use published articles from 2001 to 2014, covering almost 15 years. Limiting the search to that time period left us with 465 entries that formed the data sample for our analysis.
+
+We exported the bibliographic data with cited references for these 465 articles and imported it into BibExcel software for bibliometric analysis. We calculated the list of the most cited documents and the most cited journals in BibExcel. Having the list of the most cited journals, we proceeded to clean the citation data as journal names often appear in different forms in bibliographic databases. We found four instances where the journal short name was duplicated and adjusted the citation counts accordingly.
+
+Next step in the process was choosing the cutoff point to limit the number of documents for co-citation analysis. Co-citation is not performed on the core documents (i.e., the 465 articles published in ORM) but on the documents cited by these. Limiting the scope of documents for co-citation analysis is a judgment call that tries to balance two competing objectives: providing as broad a representation of the intellectual structure as possible versus providing a more focused, clean representation. If we limit the articles too much (i.e., choose a citation cutoff point too high), we risk missing some smaller groups of publications that are perhaps less cited but nevertheless important. If we set the cutoff point too low, we get another set of problems. Bigger groups of documents are harder to visualize. Less cited documents carry less information for co-citation analysis, which increases the probability for spurious co-citation connections. After several trials with different cutoff points, we decided to limit our analysis to 112 documents cited nine or more times by the articles published in the ORM journal.
+
+We calculated the co-citation data and exported it to the Pajek network analysis software for further analysis and visualization. Applying the Louvain community finding algorithm in Pajek, we found 11 subgroups of cited publications that represent the intellectual structure of the ORM journal. We visualized the networks in Pajek with the Kamada-Kawai algorithm. We report the results of our analysis in the following sections.
+
+SECTION LINE SEPARATION: Citation Analysis
+
+## Citation Analysis
+
+The most cited documents by articles published in ORM are presented in Table 
+
+4. A glance at the list reveals the knowledge base of 
+
+ORM and provides hints about the topical structure of ORM, which we will further investigate with co-citation analysis. The most cited document is Statistical Power Analysis for the Behavioral Sciences (Cohen, 1988), with 31 citations. The top of the list is dominated by books on psychometric theory, linear regression, and multilevel analysis. We can see that some books appear in several editions; for example, both 1978 and 1994 editions of Nunnaly’s Psychometric Theory are featured on the list. Other works include seminal works on grounded theory, meta-analysis, and structural equation modeling. Note that the way documents are represented in this table is the data that represent the reference list in the SSCI (WOS) database.
+
+The most cited journals in ORM are shown in Table 
+
+5. We see that the most cited journal is the Journal o
+
+f Applied Psychology with 1,637 citations, almost twice as many as the second on the list, which is ORM. Perhaps surprisingly for a methods journal, most of the top of the list is taken up by top-tier management journals (Academy of Management Journal, Strategic Management Journal, Journal of Management), which is an indicator of the disciplinary breadth of ORM. Most numerous on the list, however, are psychology journals, meaning that methods for micro management (psychology, organizational behavior, and human resources) research are forming a large share of topics in ORM.
+
+### Table 
+
+4. Most Cited Documents in Organizational Research Met
+
+hods.
+
+SECTION LINE SEPARATION: Co-Citation Analysis
+
+## Co-Citation Analysis
+
+After experimenting with several parameters for the Louvain algorithm that determine the granularity of groups, we settled on an 11-group solution. The algorithm originally found 15 groups, but 4 groups contained only one element of non-methods origin—seminal works of Porter, Weick, and DiMaggio—so we decided to treat these 4 groups as outliers and report only the first 
+
+11.
+
+The first three groups of intellectual structure re
+
+present the knowledge base of multilevel research methods. We labeled these groups multilevel theory, interrater reliability and agreement (IRR & IRA), and multilevel analysis (Figures 4–6). The cohesion and breadth of these groups indicate that debates about multilevel methods are one of the most important themes in ORM.
+
+The fourth group contains articles and books on psychometric measurement theory and structural equation modeling (Figure 7). The group on relative predictor importance (Figure 8) is one of the smaller and deals with estimating the importance of predictors in multiple regression. This group is separated from one of the largest groups that deals with multiple regression (shown in Figure 9).
+
+We labeled the subsequent groups measurement invariance, validity and method variance, and qualitative research (Figures 10–12). The 10th group (Figure 13) is peculiar because it shows two different topics: Half of the groups contain debates about the relevance of management theory, while the other half is dedicated to meta-analysis. The 11th group is the smallest, with three items on the topic of missing data (Figure 14).
+
+What might be the conclusions from this brief analysis? High citations to psychology journals suggest methods issues in micro research are dominant in the conversations in the ORM, although the evidence from citation rates of Strategic Management Journal and some co-citation groups reveal that ORM also caters to debates in macro fields (e.g., strategy).
+
+Out of 11 groups, only 1 is about qualitative research, meaning that quantitative methods are still the bread and butter of organizational research. Quantitative conversations are mostly centered on
+
+### Table 
+
+5. Most Cited Journals in Organizational Research Meth
+
+ods.
+
+either measurement or analysis problems, while theory issues are the focus of two found groups. Most of our results are consistent with the content analysis of the first decade of ORM journal (Aguinis, Pierce, Bosco, & Muslin, 2009). However, our findings suggest that the importance of multilevel research methods has gained in prominence in the seven years since the end of the period analyzed by Aguinis and colleagues (2009). Additionally, our analysis can be used as an aid for assigning readings in methods doctoral courses. We identified the most impactful methods publications that are used by the members of ORM community who expressed their opinions by citing these documents.
+
+SECTION LINE SEPARATION: Conclusion
+
+# Conclusion
+
+Bibliometric methods reveal great potential for the quantitative confirmation of subjectively derived categories in published reviews as well as for exploring the research landscape and identifying the categories. We proposed guidelines for conducting the science mapping of management and organization research streams.
+
+Several new bibliometric methods are likely to become prominent in the future. Hybrid methods combining the existing bibliometric and semantic approaches (e.g., bibliographic coupling with latent semantic indexing) could be used to detect new emerging topics in scientific research (Glänzel & Thijs, 2012) and are rapidly becoming the preferred basis of the mapping and visualization of science (Thijs, Schiebel, & Glänzel, 2013). Connecting documents through a combination of bibliometric and second-order textual similarities can improve the accuracy of document clustering. Second-order similarities take the lexical content into account and can overcome problems of simple co-word methods like synonyms and spelling variances (e.g., British vs. American spelling of words).
+
+Topic modeling (Blei, 2012) is a family of content analysis methods that originates from machine learning. Latent Dirichlet allocation (LDA) is the most widely used topic modeling method that is able to decipher the topical structure of a large corpus of unstructured documents. It assigns the probability of topics to documents and determines which words are connected to particular topics. Topic modeling could be applied to document abstracts and full texts, which can be later connected based on their thematic similarity. These methods hold great potential for expanding the scope of mapping the management and organization domain. Management scholars can capitalize on these advances in two ways: They may wait for suitable software to be developed or collaborate with information scientists on the forefront of advancing bibliometric research.
+
+We think that science mapping with bibliometric methods is useful in two main ways: (a) to help researchers new to a field quickly grasp the field’s structure and (b) to introduce quantitative rigor into traditional literature reviews. We envision that in the future bibliometric methods will become the third major approach (in addition to traditional qualitative literature reviews and meta-analyses)
+
+used for reviewing scientific literature. However, new doctoral students need to be trained in the technique. Some doctoral programs already provide this, but further proliferation of this practice is called for. This paper represents our effort to promote these methods and provide a thorough introduction to bibliometric methods for researchers unfamiliar with them.
+
+We are aware that other bibliometric studies have been published in journals not listed by the SSCI or are simply unpublished. However, we included the highest quality journals, so our synthesis represents the state of the art of bibliometric research in management and organization. One trend is obvious. The bar for publishing bibliometric studies is being raised higher. Bibliometric methods are transforming from being novel methods interesting in their own right to a tool used for a specific purpose: namely, to increase the rigor and structuring of literature reviews. Researchers applying bibliometric methods need to choose their research questions much more carefully and perform the research rigorously.
+
+Finally, bibliometric methods are no substitute for extensive reading and synthesis. Bibliometrics can reliably connect publications, authors, or journals; identify research substreams; and produce maps of published research, but it is up to the researcher and their knowledge of the field to interpret the findings—which is the hard part.
+
+
+
+SECTION LINE SEPARATION: References
+
+# References
+
+Acedo, F. J., Barroso, C., Casanueva, C., & Galan, J. L. (2006). Co-authorship in management and organizational studies: An empirical and network analysis. Journal of Management Studies, 43(5), 957-983. doi:10.1111/j.1467-6486.2006.00625.x
+
+Acedo, F. J., Barroso, C., & Galan, J. L. (2006). The resource-based theory: Dissemination and main trends. Strategic Management Journal, 27(7), 621-636. doi:10.1002/smj.532
+
+Acedo, F. J., & Casillas, J. C. (2005). Current paradigms in the international management field: An author co-citation analysis. International Business Review, 14(5), 619-639. doi:10.1016/j.ibusrev.2005.05.003
+
+Aguinis, H., Pierce, C. A., Bosco, F. A., Dalton, D. R., & Dalton, C. M. (2011). Debunking myths and urban legends about meta-analysis. Organizational Research Methods, 14(2), 306-331. doi:10.1177/1094428110375720
+
+Aguinis, H., Pierce, C. A., Bosco, F. A., & Muslin, I. S. (2009). First decade of Organizational Research Methods: Trends in design, measurement, and data-analysis topics. Organizational Research Methods, 12(1), 69-112. doi:10.1177/1094428108322641
+
+Ahlgren, P., Jarneving, B., & Rousseau, R. (2003). Requirements for a cocitation similarity measure, with special reference to Pearson’s correlation coefficient. Journal of the American Society for Information Science and Technology, 54(6), 550-560. doi:10.1002/asi.10242
+
+Artto, K., Martinsuo, M., Gemuendne, H. G., & Murtoaro, J. (2009). Foundations of program management: A bibliometric view. International Journal of Project Management, 27(1), 1-18. doi:10.1016/j.ijproman.2007.10.007
+
+Backhaus, K., Luegger, K., & Koch, M. (2011). The structure and evolution of business-to-business marketing: A citation and co-citation analysis. Industrial Marketing Management, 40(6, SI), 940-951. doi:10.1016/j.indmarman.2011.06.024
+
+Batagelj, V., & Mrvar, A. (1998). Pajek program for large network analysis. Connections, 21(2), 47
+57.
+
+Baumgartner
+
+, H. (2010). Bibliometric reflections on the history of consumer research. Journal of Consumer Psychology, 20(3), 233-238. doi:10.1016/j.jcps.2010.06.002
+
+Benavides-Velasco, C. A., Quintana-García, C., & Guzmán-Parra, V. F. (2011). Trends in family business research. Small Business Economics, 40(1), 41-57. doi:10.1007/s11187-011-9362-3
+
+Bernroider, E. W., Pilkington, A., & Córdoba, J.-R. (2013). Research in information systems: A study of diversity and inter-disciplinary discourse in the AIS basket journals between 1995 and 
+
+2011. Journal of Information Technology
+
+, 28(1), 74-89. doi:10.1057/jit.2013.5
+
+Bhupatiraju, S., Nomaler, Ö., Triulzi, G., & Verspagen, B. (2012). Knowledge flows—Analyzing the core literature of innovation, entrepreneurship and science and technology studies. Research Policy, 41(7), 1205-1218. doi:10.1016/j.respol.2012.03.011
+
+Biemans, W., Griffin, A., & Moenaert, R. (2007). Twenty years of the Journal of Product Innovation Management: History, participants, and knowledge stock and flows. Journal of Product Innovation Management, 24(3), 193-213. doi:10.1111/j.1540-5885.2007.00245.x
+
+Blei, D. M. (2012). Probabilistic topic models. Communications of the ACM, 55(4), 77
+84.
+
+Blondel
+
+, V. D., Guillaume, J.-L., Lambiotte, R., & Lefebvre, E. (2008). Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment, 2008(10), P10008. doi:10.1088/1742-5468/2008/10/P10008
+
+Borgatti, S. P., Everett, M. G., & Freeman, L. C. (2002). UCINET for Windows: Software for social network analysis. Harvard, MA: Analytic Technologies.
+
+Börner, K., Chen, C., & Boyack, K. (2003). Visualizing knowledge domains. Annual Review of Information Science and Technology, 37(1), 179
+255. Retrieved from http
+
+://onlinelibrary.wiley.com/doi/10.1002/aris.1440370106/full
+
+Boyack, K., & Klavans, R. (2010). Co-citation analysis, bibliographic coupling, and direct citation: Which citation approach represents the research front most accurately? Journal of the American Society for Information Science and Technology, 61(12), 2389-2404. doi:10.1002/asi
+
+Boyack, K., Klavans, R., & Börner, K. (2005). Mapping the backbone of science. Scientometrics, 64(3), 351
+374. Retrieved from http
+
+://www.springerlink.com/index/Q282602257566164.pdf
+
+Boyack, K. W., & Klavans, R. (2014). Creation of a highly detailed, dynamic, global model and map of science. Journal of the American Society for Information Science and Technology, 65(4), 670-685. doi:10.1002/asi.22990
+
+Calabretta, G., Durisin, B., & Ogliengo, M. (2011). Uncovering the intellectual structure of research in business ethics: A journey through the history, the classics, and the pillars of Journal of Business Ethics. Journal of Business Ethics, 104(4), 499-524. doi:10.1007/s10551-011-0924-8
+
+Calero-Medina, C., & van Leeuwen, T. (2012). Seed journal citation network maps: A method based on network theory. Journal of the American Society for Information Science and Technology, 63(6), 1226-1234. doi:10.1002/asi
+
+Callon, M., Courtial, J.-P., Turner, W. A., & Bauin, S. (1983). From translations to problematic networks: An introduction to co-word analysis. Social Science Information, 22(2), 191-235. doi:10.1177/053901883022002003
+
+Carvalho, M. M., Fleury, A., & Lopes, A. P. (2013). An overview of the literature on technology roadmapping (TRM): Contributions and trends. Technological Forecasting and Social Change, 80(7), 1418
+1437. Retrieved from http
+
+://www.sciencedirect.com/science/article/pii/S0040162512002934
+
+Casillas, J., & Acedo, F. (2007). Evolution of the intellectual structure of family business literature: A bibliometric study of FBR. Family Business Review, 20(2), 141
+162.
+
+Chabowski
+
+, B. R., Hult, G. T. M., & Mena, J. A. (2011). The retailing literature as a basis for franchising research: Using intellectual structure to advance theory. Journal of Retailing, 87(3, SI), 269-284. doi:10.1016/j.jretai.2011.04.001
+
+Chabowski, B. R., Mena, J. A., & Gonzalez-Padron, T. L. (2011). The structure of sustainability research in marketing, 1958-2008: A basis for future research opportunities. Journal of the Academy of Marketing Science, 39(1), 55
+70.
+
+Chabowski
+
+, B. R., Samiee, S., & Hult, G. T. M. (2013). A bibliometric analysis of the global branding literature and a research agenda. Journal of International Business Studies, 44(6), 622-634. doi:10.1057/jibs.2013.20
+
+Chang, C.-C., & Ho, Y.-S. (2010). Bibliometric analysis of financial crisis research. African Journal of Business Management, 4(18), 3898
+3910.
+
+Charvet
+
+, F. F., Cooper, M. C., & Gardner, J. T. (2008). The intellectual structure of supply chain management: A bibliometric approach. Journal of Business Logistics, 29(1), 47
+73.
+
+Chen
+
+, C. (2006). CiteSpace II: Detecting and visualizing emerging trends and transient patterns in scientific literature. Journal of the American Society for Information Science and Technology, 57(3), 359
+377.
+
+Cobo
+
+, M. J., Lopez-Herrera, A. G., Herrera-Viedma, E., & Herrera, F. (2011). Science mapping software tools: Review, analysis, and cooperative study among tools. Journal of the American Society for Information Science and Technology, 62, 1382
+1402.
+
+Cobo
+
+, M. J., López-Herrera, A. G., Herrera-Viedma, E., & Herrera, F. (2011). An approach for detecting, quantifying, and visualizing the evolution of a research field: A practical application to the fuzzy sets theory field. Journal of Informetrics, 5(1), 146-166. doi:10.1016/j.joi.2010.10.002
+
+Cobo, M., López-Herrera, A. G., Herrera-Viedma, E., & Herrera, F. (2012). SciMAT: A new science mapping analysis software tool. Journal of the American Society for Information Science, 3(8), 1609-1630. doi:10.1002/asi
+
+Cohen, J. (1988). Statistical power analysis for the behavioral sciences. Hillsdale, NJ: Lawrence Erlbaum Associates.
+
+Cohen, W. M., & Levinthal, D. A. (1990). Absorptive capacity: A new perspective on learning and innovation. Administrative Science Quarterly, 35(1), 128
+152.
+
+Collberg
+
+, C., Kobourov, S., Nagra, J., Pitts, J., & Wampler, K. (2003). A system for graph-based visualization of the evolution of software. In Proceedings of the 2003 ACM Symposium on Software Visualization—SoftVis ’
+
+03. New York
+
+, NY: ACM Press. doi:10.1145/774833.774844
+
+Conway, J. M., & Huffcutt, A. I. (2003). A review and evaluation of exploratory factor analysis practices in organizational research. Organizational Research Methods, 6(2), 147-168. doi:10.1177/1094428103251541
+
+Coombes, P. H., & Nicholson, J. D. (2013). Business models and their relationship with marketing: A systematic literature review. Industrial Marketing Management, 42(5), 656
+664. Retrieved from http
+
+://www.sciencedirect.com/science/article/pii/S0019850113000734
+
+Cornelius, B., Landstrom, H., & Persson, O. (2006). Entrepreneurial studies: The dynamic research front of a developing social science. Entrepreneurship Theory and Practice, 30(3), 375
+398.
+
+Cornelius
+
+, B., & Persson, O. (2006). Who’s who in venture capital research. Technovation, 26(2), 142
+150.
+
+Coulter
+
+, N., Monarch, I., & Konda, S. (1998). Software engineering as seen through its research literature: A study in co-word analysis. Journal of the American Society for Information Science, 49(13), 1206-1223. doi:10.1002/(SICI)1097-4571(1998)49:13<1206::AID-ASI7>3.0.CO;2-F
+
+Crane, D. (1972). Invisible colleges: Diffusion of knowledge in scientific communication. Chicago, IL: The University of Chicago Press.
+
+Di Guardo, M. C., & Harrigan, K. R. (2012). Mapping research on strategic alliances and innovation: A co-citation analysis. The Journal of Technology Transfer, 37, 789-811. doi:10.1007/s10961-011-9239-2
+
+Di Stefano, G., Gambardella, A., & Verona, G. (2012). Technology push and demand pull perspectives in innovation studies: Current findings and future research directions. Research Policy, 41(8), 1283-1295. doi:10.1016/j.respol.2012.03.021
+
+Di Stefano, G., Verona, G., & Peteraf, M. (2010). Dynamic capabilities deconstructed: A bibliographic investigation into the origins, development, and future directions of the research domain. Industrial and Corporate Change, 19(4), 1187
+1204.
+
+Durisin
+
+, B., Calabretta, G., & Parmeggiani, V. (2010). The intellectual structure of product innovation research: A bibliometric study of the Journal of Product Innovation Management, 1984
+2004. Journal of Product Innovation Management
+
+, 27(3), 437
+451.
+
+Fabrigar
+
+, L. R., Wegener, D. T., MacCallum, R. C., & Strahan, E. J. (1999). Evaluating the use of exploratory factor analysis in psychological research. Psychological Methods, 4(3), 272
+299.
+
+Fagerberg
+
+, J., Fosaas, M., & Sapprasert, K. (2012). Innovation: Exploring the knowledge base. Research Policy, 41(7), 1132-1153. doi:10.1016/j.respol.2012.03.008
+
+Fagerberg, J., Landström, H., & Martin, B. R. (2012). Exploring the emerging knowledge base of ‘‘the knowledge society.’’ Research Policy, 41(7), 1121-1131. doi:10.1016/j.respol.2012.03.007
+
+Fagerberg, J., & Verspagen, B. (2009). Innovation studies—The emerging structure of a new scientific field. Research Policy, 38(2), 218-233. doi:10.1016/j.respol.2008.12.006
+
+Ferreira, M. A. S. P. V., Pinto, C. S. F., Serra, F. A. R., & Santos, J. C. (2013). A bibliometric study of John Dunning’s contribution to international business research. Review of Business Management, 15(46), 56-75. doi:10.7819/rbgn.v15i46.1163
+
+Fischbach, K., Putzke, J., & Schoder, D. (2011). Co-authorship networks in electronic markets research. Electronic Markets, 21(1), 19-40. doi:10.1007/s12525-011-0051-5
+
+Fortunato, S. (2010). Community detection in graphs. Physics Reports, 486(3-5), 75-174. doi:10.1016/j.physrep.2009.11.002
+
+Galvagno, M. (2011). The intellectual structure of the anti-consumption and consumer resistance field: An author co-citation analysis. European Journal of Marketing, 45(11-12), 1688-1701. doi:10.1108/03090561111167441
+
+Garfield, E. (1979). Is citation analysis a legitimate evaluation tool? Scientometrics, 1(4), 359
+375.
+
+Gartner
+
+, W. B., Davidsson, P., & Zahra, S. A. (2006). Are you talking to me? The nature of community in entrepreneurship scholarship. Entrepreneurship Theory and Practice, 30(3), 321
+331.
+
+Gerdsri
+
+, N., Kongthon, A., & Vatananan, R. S. (2013). Mapping the knowledge evolution and professional network in the field of technology roadmapping: A bibliometric analysis. Technology Analysis & Strategic Management, 25(4), 403-422. doi:10.1080/09537325.2013.774350
+
+Glänzel, W., & Thijs, B. (2012). Using ‘‘core documents’’ for detecting and labelling new emerging topics. Scientometrics, 91(2), 399-416. doi:10.1007/s11192-011-0591-7
+
+Gmür, M. (2003). Co-citation analysis and the search for invisible colleges: A methodological evaluation. Scientometrics, 57(1), 27
+57.
+
+Gregoire
+
+, D. A., Noel, M. X., Dery, R., & Bechard, J. P. (2006). Is there conceptual convergence in entrepreneurship research? A co-citation analysis of Frontiers of Entrepreneurship Research, 1981
+2004. Entrepreneurship Theory and Practice
+
+, 30(3), 333-373. doi:10.1111/j.1540-6520.2006.00124.x
+
+Gundolf, K., & Filser, M. (2012). Management research and religion: A citation analysis. Journal of Business Ethics, 112(1), 177-185. doi:10.1007/s10551-012-1240-7
+
+Hanisch, B., & Wald, A. (2012). A bibliometric view on the use of contingency theory in project management research. Project Management Journal, 43(3), 4-23. doi:10.1002/pmj.21267
+
+He, Q. (1998). Knowledge discovery through co-word analysis. Library Trends, 48(1), 133
+159. Retrieved from http
+
+://eric.ed.gov/?id=EJ595487
+
+Herbst, U., Voeth, M., & Meister, C. (2011). What do we know about buyer-seller negotiations in marketing research? A status quo analysis. Industrial Marketing Management, 40(6, SI), 967-978. doi:10.1016/j.indmarman.2011.07.004
+
+Hoffman, D. L., & Holbrook, M. B. (1993). The intellectual structure of consumer research—A bibliometric study of author cocitations in the 1st 15 years of the Journal of Consumer Research. Journal of Consumer Research, 19(4), 505-517. doi:10.1086/209319
+
+Huang, C.-Y., & Ho, Y.-S. (2011). Historical research on corporate governance: A bibliometric analysis. African Journal of Business Management, 5(2), 276
+284.
+
+Jarneving
+
+, B. (2005). A comparison of two bibliometric methods for mapping of the research front. Scientometrics, 65(2), 245-263. doi:10.1007/s11192-005-0270-7
+
+Katz, J. S., & Martin, B. R. (1997). What is research collaboration? Research Policy, 26(1), 1-18. doi:10.1016/S0048-7333(96)00917-1
+
+Kessler, M. M. (1963). Bibliographic coupling between scientific papers. American Documentation, 14(1), 10-25. doi:10.1002/asi.5090140103
+
+Keupp, M. M., Palmié, M., & Gassmann, O. (2012). The strategic management of innovation: A systematic review and paths for future research. International Journal of Management Reviews, 14, 367-390. doi:10.1111/j.1468-2370.2011.00321.x # References
+
+Kim, J., & McMillan, S. J. (2008). Evaluation of Internet advertising research—A bibliometric analysis of citations from key sources. *Journal of Advertising*, 37(1), 99-112. doi:10.2753/JOA0091-3367370108
+
+Kobourov, S. G. (2012). Spring embedders and force directed graph drawing algorithms, 
+
+23. Retrieved from http
+
+://arxiv.org/abs/1201.3011
+
+Kraus, S. (2011). State-of-the-art current research in international entrepreneurship: A citation analysis. *African Journal of Business Management*, 5(3), 1020
+1038.
+
+Landstr
+
+öm, H., Harirchi, G., & Åström, F. (2012). Entrepreneurship: Exploring the knowledge base. *Research Policy*, 41(7), 1154
+1181.
+
+Leone
+
+, R. P., Robinson, L. M., Bragge, J., & Somervuori, O. (2012). A citation and profiling analysis of pricing research from 1980 to 2010. *Journal of Business Research*, 65(7), 1010-1024. doi:10.1016/j.jbusres.2011.04.007
+
+Leydesdorff, L. (1999). Software and data of Loet Leydesdorff. Retrieved from http://www.leydesdorff.net/software.htm
+
+Liu, X., Glänzel, W., & Moor, B. (2012). Optimal and hierarchical clustering of large-scale hybrid networks for scientific mapping. *Scientometrics*, 91(2), 473-493. doi:10.1007/s11192-011-0600-x
+
+Lu, K., & Wolfram, D. (2012). Measuring author research relatedness : A comparison of word-based, topic based, and author cocitation approaches. *Journal of the American Society for Information Science*, 63(10), 1973-1986.
+
+Ma, Z. (2009). The status of contemporary business ethics research: Present and future. *Journal of Business Ethics*, 90(3), 255-265. doi:10.1007/s10551-010-0420-6
+
+Ma, Z., Lee, Y., & Yu, K.-H. (2008). Ten years of conflict management studies: Themes, concepts and relationships. *International Journal of Conflict Management*, 19(3), 234-248. doi:10.1108/10444060810875796
+
+Ma, Z., Liang, D., Yu, K.-H., & Lee, Y. (2012). Most cited business ethics publications: Mapping the intellectual structure of business ethics studies in 2001-2008. *Business Ethics: A European Review*, 21(3), 286-297. doi:10.1111/j.1467-8608.2012.01652.x
+
+Ma, Z., & Yu, K.-H. (2010). Research paradigms of contemporary knowledge management studies: 1998-2007. *Journal of Knowledge Management*, 14(2), 175-189. doi:10.1108/13673271011032337
+
+Marion, L. (2002). A tri-citation analysis exploring the citation image of Kurt Lewin. *Proceedings of the American Society for Information Science and Technology*, 39(1), 3
+13. Retrieved from http
+
+://onlinelibrary.wiley.com/doi/10.1002/meet.1450390101/full
+
+Marsilio, M., Cappellaro, G., & Cuccurullo, C. (2011). The intellectual structure of research into PPPS: A bibliometric analysis. *Public Management Review*, 13(6), 763-782. doi:10.1080/14719037.2010.539112
+
+Martin, B. R. (2012). The evolution of science policy and innovation studies. *Research Policy*, 41(7), 1219-1239. doi:10.1016/j.respol.2012.03.012
+
+Martin, B. R., Nightingale, P., & Yegros-Yegros, A. (2012). Science and technology studies: Exploring the knowledge base. *Research Policy*, 41(7), 1182
+1204. Retrieved from http
+
+://www.sciencedirect.com/science/article/pii/S0048733312000716
+
+McCain, K. W. (1990). Mapping authors in intellectual space: A technical overview. *Journal of the American Society for Information Science and Technology*, 41(6), 433
+43. Retrieved from http
+
+://onlinelibrary.wiley.com/doi/10.1002/(SICI)1097-4571(199009)41:6<433::AID-ASI11>3.0.CO;2-Q/full
+
+McCain, K. W. (1991). Mapping economics through the journal literature: An experiment in journal cocitation analysis. *Journal of the American Society for Information Science and Technology*, 42(4), 290-296. doi:10.1002/(SICI)1097-4571(199105)42:4<290::AID-ASI5>3.0.CO;2-9
+
+McCain, K. W. (2009). Using tricitation to dissect the citation image: Conrad Hal Waddington and the rise of evolutionary developmental biology. *Journal of the American Society for Information Science and Technology*, 60(7), 1301-1319. doi:10.1002/asi
+
+McCain, K. W., & McCain, R. a. (2002). Mapping ‘‘a beautiful mind:’’ A comparison of the author cocitation PFNets for John Nash, John Harsanyi, and Reinhard Selten—The three winners of the 1994 Nobel Prize for Economics. *Proceedings of the American Society for Information Science and Technology*, 39(1), 552-553. doi:10.1002/meet.14503901108
+
+McMillan, G. S. (2008). Mapping the invisible colleges of R&D Management. *R&D Management*, 38(1), 69
+83.
+
+Meyer
+
+, M., Pereira, T. S., Persson, O., & Granstrand, O. (2004). The scientometric world of Keith —A tribute to his contributions to research policy and patent analysis. *Research Policy*, 33(9), 1405-1417. doi:10.1016/j.respol.2004.07.008
+
+Montiel Campos, H., Sole Parellada, F., & Palma, Y. (2012). Mapping the intellectual structure of entrepreneurship research: Revisiting the invisible college. *RBGN-Revista Brasileira de Gestao de Negocios*, 14(42), 41-58.
+
+Muñoz-Leiva, F., Sánchez-Fernández, J., Liébana-Cabanillas, F. J., & Martínez-Fiestas, M. (2013). Detecting salient themes in financial marketing research from 1961 to 2010. *The Service Industries Journal*, 33(9-10), 925-940. doi:10.1080/02642069.2013.719884
+
+Neely, A. (2005). The evolution of performance measurement research—Developments in the last decade and a research agenda for the next. *International Journal of Operations & Production Management*, 25(12), 1264-1277. doi:10.1108/01443570510633648
+
+Nerur, S. P., Rasheed, A. A., & Natarajan, V. (2008). The intellectual structure of the strategic management field: An author co-citation analysis. *Strategic Management Journal*, 29(3), 319-336. doi:10.1002/smj.659
+
+Nosella, a., Cantarello, S., & Filippini, R. (2012). The intellectual structure of organizational ambidexterity: A bibliographic investigation into the state of the art. *Strategic Organization*, 10(4), 450-465. doi:10.1177/1476127012457979
+
+Pasadeos, Y., Phelps, J., & Kim, B. H. (1998). Disciplinary impact of advertising scholars: Temporal comparisons of influential authors, works and research networks. *Journal of Advertising*, 27(4), 53
+70.
+
+Persson
+
+, O. (1994). The intellectual base and research fronts of JASIS 1986-1990. *Journal of the American Society for Information Science*, 45(1), 31-38. doi:10.1002/(SICI)1097-4571(199401)45:1<31::AID ASI4>3.0.CO;2-G
+
+Persson, O. D., Danell, R., & Wiborg Schneider, J. (2009). How to use Bibexcel for various types of bibliometric analysis. In F. Åström, R. Danell, B. Larsen, & J. Schneider (Eds.), *Celebrating scholarly communication studies: A Festschrift for Olle Persson at his 60th Birthday* (pp. 9-24). Leuven, Belgium: International Society for Scientometrics and Informetrics.
+
+Phillips, D. M., Baumgartner, H., & Pieters, R. (1999). Influence in the evolving citation network of the journal of consumer research. In E. J. Arnould & L. M. Scott (Eds.), *Advances in Consumer Research* (Vol. 26, pp. 203-210). Provo, UT: Association for Consumer Research.
+
+Pilkington, A., & Chai, K.-H. (2008). Research themes, concepts and relationships—A study of *International Journal of Service Industry Management* (1990-2005). *International Journal of Service Industry Management*, 19(1), 83-110. doi:10.1108/09564230810855725
+
+Pilkington, A., & Fitzgerald, R. (2006). Operations management themes, concepts and relationships: A forward retrospective of IJOPM. *International Journal of Operations & Production Management*, 26(11-12), 1255-1275. doi:10.1108/01443570610705854
+
+Pilkington, A., & Lawton, T. C. (2014). Divided by a common language? Transnational insights into epistemological and methodological approaches to strategic management research in English-speaking countries. *Long Range Planning*, 47(5), 299-311. doi:http://dx.doi.org/10.1016/j.lrp.2013.08.001
+
+Pilkington, A., & Liston-Heyes, C. (1999). Is production and operations management a discipline? A citation/co-citation study. *International Journal of Operations & Production Management*, 19(1), 7-20. doi:10.1108/01443579910244188
+
+Pilkington, A., & Meredith, J. (2009). The evolution of the intellectual structure of operations management 1980-2006: A citation/co-citation analysis. *Journal of Operations Management*, 27(3), 185-202. doi:10.1016/j.jom.2008.08.001
+
+Pilkington, A., & Teichert, T. (2006). Management of technology: Themes, concepts and relationships. *Technovation*, 26(3), 288-299. doi:10.1016/j.technovation.2005.01.009
+
+Price, D. J. de S. (1965). Networks of scientific papers. *Science*, 149, 510
+515.
+
+Raasch
+
+, C., Lee, V., Spaeth, S., & Herstatt, C. (2013). The rise and fall of interdisciplinary research: The case of open source innovation. *Research Policy*, 42(5), 1138
+1151. Retrieved from http
+
+://www.sciencedirect.com/science/article/pii/S0048733313000279
+
+Raghuram, S., Tuertscher, P., & Garud, R. (2010). Mapping the field of virtual work: A co-citation analysis. *Information Systems Research*, 21(4), 983-999. doi:10.1287/isre.1080.0227
+
+Ramos-Rodriguez, A. R., & Ruiz-Navarro, J. (2004). Changes in the intellectual structure of strategic management research: A bibliometric study of the *Strategic Management Journal*, 1980-2000. *Strategic Management Journal*, 25(10), 981-1004. doi:10.1002/smj.397
+
+Reader, D., & Watkins, D. (2006). The social and collaborative nature of entrepreneurship scholarship: A co-citation and perceptual analysis. *Entrepreneurship Theory and Practice*, 30(3), 417-441. doi:10.1111/j.1540-6520.2006.00127.x
+
+Ronda-Pupo, G. A., & Guerras-Martin, L. A. (2012). Dynamics of the evolution of the strategy concept 1962-2008: A co-word analysis. *Strategic Management Journal*, 33(2), 162-188. doi:10.1002/smj.948
+
+Samiee, S., & Chabowski, B. R. (2012). Knowledge structure in international marketing: A multi-method bibliometric analysis. *Journal of the Academy of Marketing Science*, 40(2), 364-386. doi:10.1007/s11747-011-0296-8
+
+Schildt, H. A. (2005). Sitkis—A tool for bibliometric analysis. Retrieved from http://users.tkk.fi/hschildt/sitkis/
+
+Schildt, H. A., & Mattsson, J. T. (2006). A dense network sub-grouping algorithm for co-citation analysis and its implementation in the software tool Sitkis. *Scientometrics*, 67(1), 143-163. doi:10.1007/s11192-006-0054-8
+
+Schildt, H. A., Zahra, S. A., & Sillanpaa, A. (2006). Scholarly communities in entrepreneurship research: A co-citation analysis. *Entrepreneurship Theory and Practice*, 30(3), 399
+415.
+
+Schmidt
+
+, F. (2008). Meta-analysis: A constantly evolving research integration tool. *Organizational Research Methods*, 11(1), 96-113. doi:10.1177/1094428107303161
+
+Shafique, M. (2013). Thinking inside the box? Intellectual structure of the knowledge base of innovation research (1988-2008). *Strategic Management Journal*, 34(1), 62-93. doi:10.1002/smj.2002
+
+Shilbury, D. (2011). A bibliometric study of citations to sport management and marketing journals. *Journal of Sport Management*, 25(5), 423
+444.
+
+Small
+
+, H. (1973). Co-citation in the scientific literature: A new measure of the relationship between two documents. *Journal of the American Society for Information Science*, 24(4), 265
+269.
+
+Small
+
+, H. (1999). Visualizing science by citation mapping. *Journal of the American Society for Information Science and Technology*, 50(9), 799
+813. Retrieved from http
+
+://svn.assembla.com/svn/awt/literature/1999-small.pdf
+
+Stategies, S. (2012). Methodology—History. Map of Science. Retrieved from http://www.mapofscience.com/?page_id=237
+
+Thijs, B., Schiebel, E., & Glänzel, W. (2013). Do second-order similarities provide added-value in a hybrid approach? *Scientometrics*, 96(3), 667-677. doi:10.1007/s11192-012-0896-1
+
+Tranfield, D., Denyer, D., & Smart, P. (2003). Towards a methodology for developing evidence-informed management knowledge by means of systematic review. *British Journal of Management*, 14(3), 207-222. doi:10.1111/1467-8551.00375
+
+Tu, P. P.-N. (2011). A study of influential authors, works and research network of consumer behavior research. *African Journal of Business Management*, 5(23), 9838
+9854.
+
+Usdiken
+
+, B., & Pasadeos, Y. (1995). Organizational analysis in North-America and Europe—A comparison of cocitation networks. *Organization Studies*, 16(3), 503-526. doi:10.1177/017084069501600306
+
+Uslay, C., Morgan, R. E., & Sheth, J. N. (2009). Peter Drucker on marketing: An exploration of five tenets. *Journal of the Academy of Marketing Science*, 37(1), 47-60. doi:10.1007/s11747-008-0099-8
+
+Uysal, O. O. (2010). Business ethics research with an accounting focus: A bibliometric analysis from 1988 to 2007. *Journal of Business Ethics*, 93(1), 137-160. doi:10.1007/s10551-009-0187-9
+
+Vogel, R. (2012). The visible colleges of management and organization studies: A bibliometric analysis of academic journals. *Organization Studies*, 33(8), 1015-1043. doi:10.1177/0170840612448028
+
+Vogel, R., & Güttel, W. H. (2013). The dynamic capability view in strategic management: A bibliometric review. *International Journal of Management Reviews*, 15(4), 426-446. doi:10.1111/ijmr.12000
+
+Volberda, H. W., Foss, N. J., & Lyles, M. A. (2010). Absorbing the concept of absorptive capacity: How to realize its potential in the organization field. *Organization Science*, 21(4), 931-951. doi:10.1287/orsc.1090.0503
+
+Wallace, M. L., Gingras, Y., & Duhon, R. (2009). A new approach for detecting scientific specialties from raw cocitation networks. *Journal of the American Society for Information Science and Technology*, 60(2), 240-246. doi:10.1002/asi.20987
+
+Wallin, J. A. (2005). Bibliometric methods: Pitfalls and possibilities. *Basic & Clinical Pharmacology & Toxicology*, 97(5), 261
+275.
+
+Wallin
+
+, M. (2012). The bibliometric structure of spin-off literature. *Innovation: Management, Policy & Practice*, 14(2), 162
+177.
+
+Walter
+
+, C., & Ribiere, V. (2013). A citation and co-citation analysis of 10 years of KM theory and practices. *Knowledge Management Research & Practice*, 11(3), 221
+229. Retrieved from http
+
+://dx.doi.org/10.1057/kmrp.2013.25
+
+White, H. D. (2003). Author cocitation analysis and Pearson’s r. *Journal of the American Society for Information Science and Technology*, 54(13), 1250-1259. doi:10.1002/asi.10325
+
+White, H. D., & Griffith, B. C. (1981). Author cocitation: A literature measure of intellectual structure. *Journal of the American Society for Information Science*, 32(3), 163-171. doi:10.1002/asi.4630320302
+
+White, H. D., & McCain, K. W. (1998). Visualizing a discipline: An author co-citation analysis of information science, 1972-1995. *Journal of the American Society for Information Science*, 49(4), 327-355. doi:10.1002/(SICI)
+
+Zaveršnik, M., & Batagelj, V. (2004). Islands. Retrieved from http://vlado.fmf.uni-lj.si/pub/networks/doc/sunbelt/islands.pdf
+
+Zhao, D., & Strotmann, A. (2008). Evolution of research activities and intellectual influences in information science 1996-2005: Introducing author bibliographic-coupling analysis. *Journal of the American Society for Information Science*, 59(1998), 2070-2086. doi:10.1002/asi
+
+SECTION LINE SEPARATION: Author Biographies
+
+# Author Biographies
+
+**Ivan Zupic** is a PhD candidate in Management and Organization at the Faculty of Economics, University of Ljubljana, Slovenia. His PhD thesis investigates strategic configurations of high-growth firms. Before entering academia, he worked as a consultant in IT industry and journalist/photographer in media.
+
+**Tomaž Čater** is a Full Professor of Management at the Faculty of Economics, University of Ljubljana, Slovenia. His research interests include competitive advantages, corporate and business strategies, and environmental strategies. His work has been published in several international journals, including *Industrial Marketing Management*, *Journal of Business Economics and Management*, and *Personnel Review*.
