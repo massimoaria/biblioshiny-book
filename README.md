@@ -20,22 +20,18 @@ The book covers both the **methodological foundations** of science mapping and *
 
 ```
 biblioshiny-book/
-├── datasets/               # Raw bibliographic data (WoS & Scopus exports)
-├── content_analysis/       # Plain-text files for Chapter 11 (Content Analysis)
-├── supplementary-materials/ # High-resolution figures and extended notes
-├── scripts/                # R scripts for advanced custom workflows
-└── exercises/              # Practical tasks and self-assessment files
+├── datasets/            # Raw bibliographic data (WoS & Scopus exports)
+├── content_analysis/    # Plain-text files for Chapter 11 (Content Analysis)
+└── other_files/         # Ancillary files for text pre-processing
 ```
 
 ### Folder Details
 
 | Folder | Description |
 |--------|-------------|
-| `/datasets` | Raw bibliographic data in Plain Text and BibTeX formats, exported from Web of Science (WoS) and Scopus. Used in the step-by-step tutorials. |
+| `/datasets` | Raw bibliographic data in Plain Text and BibTeX formats, exported from Web of Science (WoS) and Scopus. Used in the step-by-step tutorials throughout the book. |
 | `/content_analysis` | Plain-text files produced by the Biblioshiny Content Analysis extraction step, used to reproduce all results in **Chapter 11**. |
-| `/supplementary-materials` | High-resolution scientific citation network models, figures, and extended methodological notes. |
-| `/scripts` | R scripts for advanced users who want to customize bibliometric workflows beyond the GUI. |
-| `/exercises` | Practical tasks and self-assessment files to test your science mapping skills. |
+| `/other_files` | Ancillary resources for text pre-processing, including custom **stopword lists** and **synonym dictionaries** used in the Content Analysis workflows. |
 
 #### Content Analysis Source Papers
 
@@ -71,7 +67,7 @@ biblioshiny()
 
 ### 4. Load the Datasets
 
-Access the `datasets/` folder for the ZIP archives referenced in **Chapter 3**. Files are named according to the corresponding chapters and case studies in the book.
+Open the `datasets/` folder and locate the files referenced in each chapter. Files are named according to the corresponding chapters and case studies in the book.
 
 ---
 
