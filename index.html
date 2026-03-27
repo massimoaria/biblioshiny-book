@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Mapping Analysis — A Primer with Biblioshiny</title>
+    <meta name="description" content="Official companion website for the book Science Mapping Analysis: A Primer with Biblioshiny by Massimo Aria and Corrado Cuccurullo, published by McGraw-Hill.">
+    <meta name="keywords" content="bibliometrics, science mapping, bibliometrix, biblioshiny, literature review, bibliographic analysis">
+    <meta name="author" content="Massimo Aria, Corrado Cuccurullo">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Science Mapping Analysis — A Primer with Biblioshiny">
+    <meta property="og:description" content="The definitive guide to bibliometric analysis. By the creators of bibliometrix. Published by McGraw-Hill.">
+    <meta property="og:image" content="https://massimoaria.github.io/biblioshiny-book/book_cover.png">
+    <meta property="og:url" content="https://massimoaria.github.io/biblioshiny-book">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Science Mapping Analysis — A Primer with Biblioshiny">
+    <meta name="twitter:description" content="The definitive guide to bibliometric analysis. By the creators of bibliometrix.">
+    <meta name="twitter:image" content="https://massimoaria.github.io/biblioshiny-book/book_cover.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-deep: #0d2137;
+            --primary-light: #2a5a8c;
+            --accent: #2ecc71;
+            --accent-dark: #27ae60;
+            --text: #2c3e50;
+            --text-light: #5a6c7d;
+            --text-muted: #8a9bac;
+            --bg: #f8fafb;
+            --white: #ffffff;
+            --border: #e1e8ed;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- Navigation ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13, 33, 55, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .nav-brand {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-brand span { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: white; }
+
+        /* ---- Hero ---- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 40%, var(--primary-light) 100%);
+            color: white;
+            padding: 130px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(46,204,113,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 85% 20%, rgba(52,152,219,0.08) 0%, transparent 40%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .cover-wrapper { position: relative; }
+
+        .cover-wrapper img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
+            transition: transform 0.3s;
+        }
+
+        .cover-wrapper:hover img { transform: translateY(-4px) scale(1.01); }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 22px;
+        }
+
+        .hero-text .authors {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .hero-text .authors strong { font-weight: 600; }
+
+        .hero-text .affiliations {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 28px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.14);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 18px rgba(46,204,113,0.3);
+        }
+
+        .btn-outline {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-1px);
+        }
+
+        /* ---- Accent strip ---- */
+        .accent-strip {
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark), var(--accent));
+        }
+
+        /* ---- Quote ---- */
+        .quote-section {
+            padding: 52px 0;
+            background: var(--white);
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quote-section blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* ---- Section base ---- */
+        .section { padding: 72px 0; }
+        .section-white { background: var(--white); }
+        .section-gray { background: var(--bg); }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-lead {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 620px;
+            margin-bottom: 40px;
+        }
+
+        /* ---- About ---- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 56px;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.75;
+        }
+
+        .stats-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 22px 16px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .stat:hover { border-color: var(--accent); }
+
+        .stat-num {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ---- Contents ---- */
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .part-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 20px;
+            transition: all 0.2s;
+        }
+
+        .part-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        }
+
+        .part-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-dark);
+            margin-bottom: 8px;
+        }
+
+        .part-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .ch-list { list-style: none; }
+
+        .ch-list li {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            padding: 4px 0;
+            border-bottom: 1px solid #f0f2f4;
+        }
+
+        .ch-list li:last-child { border-bottom: none; }
+        .ch-list li strong { color: var(--text); font-weight: 600; }
+
+        /* ---- Audience ---- */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .audience-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px 24px;
+        }
+
+        .audience-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .audience-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ---- Companion (repository) ---- */
+        .repo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .repo-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 28px 24px;
+        }
+
+        .repo-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .repo-card p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+
+        .repo-card code {
+            background: var(--bg);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: var(--primary);
+        }
+
+        /* ---- Getting started ---- */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px 20px;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .step h3 {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            line-height: 1.55;
+        }
+
+        .step code {
+            display: block;
+            background: var(--primary-deep);
+            color: var(--accent);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        /* ---- Footer ---- */
+        footer {
+            background: var(--primary-deep);
+            color: rgba(255,255,255,0.5);
+            padding: 48px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 14px;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            padding: 3px 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: white; }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 220px 1fr; gap: 36px; }
+            .parts-grid, .steps { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 0 64px; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .cover-wrapper { max-width: 220px; margin: 0 auto; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-badges, .cta-row { justify-content: center; }
+            .parts-grid, .audience-grid, .repo-grid, .steps, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-col { grid-template-columns: repeat(4, 1fr); }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-brand"><span>biblioshiny</span>-book</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contents">Contents</a></li>
+            <li><a href="#audience">Audience</a></li>
+            <li><a href="#companion">Companion</a></li>
+            <li><a href="#start">Get Started</a></li>
+            <li><a href="https://www.bibliometrix.org">bibliometrix.org</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="cover-wrapper">
+                <img src="book_cover.png" alt="Science Mapping Analysis — Book Cover">
+            </div>
+            <div class="hero-text">
+                <h1>Science Mapping<br>Analysis</h1>
+                <div class="subtitle">A Primer with Biblioshiny</div>
+                <div class="authors">
+                    <strong>Massimo Aria</strong> &amp; <strong>Corrado Cuccurullo</strong>
+                </div>
+                <div class="affiliations">
+                    University of Naples Federico II &bull; University of Campania Luigi Vanvitelli
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">11 Chapters</span>
+                    <span class="badge">McGraw-Hill 2026</span>
+                    <span class="badge">No coding required</span>
+                    <span class="badge">ISBN 978-88-386-2297-7</span>
+                </div>
+                <div class="cta-row">
+                    <a href="https://www.mheducation.it" class="btn btn-accent">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                        Buy the Book
+                    </a>
+                    <a href="https://github.com/massimoaria/biblioshiny-book" class="btn btn-outline">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        Companion Data
+                    </a>
+                    <a href="https://www.bibliometrix.org" class="btn btn-outline">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        bibliometrix.org
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="accent-strip"></div>
+
+<!-- Quote -->
+<section class="quote-section">
+    <div class="container">
+        <blockquote>"In a world deluged by irrelevant information, clarity is power."</blockquote>
+        <cite>Yuval Noah Harari, 21 Lessons for the 21st Century</cite>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section section-white">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">About the Book</h2>
+                <p>
+                    Every year, millions of scientific articles are published across thousands of journals. How can researchers navigate this ocean of knowledge, identify the most influential works, and uncover the hidden structures that shape a scientific field?
+                </p>
+                <p>
+                    <strong>Science Mapping Analysis</strong> provides a comprehensive, hands-on guide to the quantitative study of scientific literature through citation patterns, keyword co-occurrences, and collaboration networks. Written by the creators of <strong>bibliometrix</strong> — the most widely adopted open-source bibliometric tool — this book bridges the gap between methodological rigor and practical accessibility.
+                </p>
+                <p>
+                    Organized around the <strong>SAAS workflow</strong> (Search–Appraisal–Analysis–Synthesis), the eleven chapters take the reader from foundational concepts to advanced techniques. Every method is explained with its theoretical underpinnings and demonstrated step by step through <strong>Biblioshiny</strong>, a point-and-click web interface that requires no programming expertise.
+                </p>
+                <p>
+                    A common example runs through all chapters, showing how different techniques illuminate different facets of the same field. Mathematical formulations are included where they clarify the logic; worked examples make every analysis immediately reproducible.
+                </p>
+            </div>
+            <div class="stats-col">
+                <div class="stat">
+                    <div class="stat-num">180+</div>
+                    <div class="stat-lbl">Countries using bibliometrix</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">11</div>
+                    <div class="stat-lbl">Comprehensive chapters</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10K+</div>
+                    <div class="stat-lbl">Citations to the original paper</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">0</div>
+                    <div class="stat-lbl">Lines of code required</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contents -->
+<section id="contents" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">Contents</h2>
+        <p class="section-lead">Eleven chapters following the natural arc of a complete science mapping analysis.</p>
+        <div class="parts-grid">
+            <div class="part-card">
+                <div class="part-label">Part A — Chapters 1–3</div>
+                <h3>Foundations & Tools</h3>
+                <ul class="ch-list">
+                    <li><strong>1.</strong> Introduction to Science Mapping</li>
+                    <li><strong>2.</strong> Introducing Biblioshiny</li>
+                    <li><strong>3.</strong> Bibliographic Databases</li>
+                </ul>
+            </div>
+            <div class="part-card">
+                <div class="part-label">Part B — Chapters 4–7</div>
+                <h3>Focus on Domain</h3>
+                <ul class="ch-list">
+                    <li><strong>4.</strong> Overview</li>
+                    <li><strong>5.</strong> Sources</li>
+                    <li><strong>6.</strong> Authors</li>
+                    <li><strong>7.</strong> Documents</li>
+                </ul>
+            </div>
+            <div class="part-card">
+                <div class="part-label">Part C — Chapters 8–10</div>
+                <h3>Knowledge Structures</h3>
+                <ul class="ch-list">
+                    <li><strong>8.</strong> Conceptual Structure</li>
+                    <li><strong>9.</strong> Intellectual Structure</li>
+                    <li><strong>10.</strong> Social Structure</li>
+                </ul>
+            </div>
+            <div class="part-card">
+                <div class="part-label">Part D — Chapter 11</div>
+                <h3>Content Analysis</h3>
+                <ul class="ch-list">
+                    <li><strong>11.</strong> Content Analysis of Key Scientific Publications</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Audience -->
+<section id="audience" class="section section-white">
+    <div class="container">
+        <h2 class="section-title">Who This Book Is For</h2>
+        <p class="section-lead">From PhD students to research managers, across all disciplines. No prior programming experience is required.</p>
+        <div class="audience-grid">
+            <div class="audience-card">
+                <h3>Researchers</h3>
+                <p>Conduct systematic, evidence-based literature reviews across any discipline. Go beyond narrative approaches with quantitative methods that reveal the structure of your field.</p>
+            </div>
+            <div class="audience-card">
+                <h3>PhD Students & Early-Career Researchers</h3>
+                <p>Navigate your research landscape from day one. Identify the most influential works, dominant themes, and key scholarly communities.</p>
+            </div>
+            <div class="audience-card">
+                <h3>Research Managers & Policymakers</h3>
+                <p>Assess the structure and dynamics of research areas for strategic planning, resource allocation, and research evaluation.</p>
+            </div>
+            <div class="audience-card">
+                <h3>Librarians & Information Professionals</h3>
+                <p>A comprehensive reference to bibliometric methods and the tools available to support researchers in conducting bibliometric analyses.</p>
+            </div>
+            <div class="audience-card">
+                <h3>Instructors & Course Designers</h3>
+                <p>A textbook that combines theoretical rigour with practical application for teaching research methods, quantitative literature reviewing, or bibliometrics.</p>
+            </div>
+            <div class="audience-card">
+                <h3>All Disciplines</h3>
+                <p>Whether you are a management scholar, a health scientist, a computer scientist, or an environmental researcher — the methods presented here apply directly to your domain.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Companion -->
+<section id="companion" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">Book Companion</h2>
+        <p class="section-lead">This repository contains everything you need to reproduce every analysis presented in the book.</p>
+        <div class="repo-grid">
+            <div class="repo-card">
+                <h3>The Management Collection</h3>
+                <p>All applied examples use a common dataset — a collection of bibliometric and scientometric research articles retrieved from the Web of Science. Available as a pre-processed <code>.rdata</code> file and as raw export files.</p>
+            </div>
+            <div class="repo-card">
+                <h3>Content Analysis Sources</h3>
+                <p>Pre-processed plain-text files for Chapter 11, extracted from two foundational works: Ramos-Rodriguez & Ruiz-Navarro (2004) and Zupic & Cater (2015).</p>
+            </div>
+            <div class="repo-card">
+                <h3>Text Pre-processing Resources</h3>
+                <p>Custom stopword lists and synonym dictionaries used in the content analysis workflows, plus a complete field tag reference for bibliographic databases.</p>
+            </div>
+            <div class="repo-card">
+                <h3>Open & Reproducible</h3>
+                <p>All materials are released under the MIT License. Clone the repository, load the data into Biblioshiny, and follow along chapter by chapter.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Get started -->
+<section id="start" class="section section-white">
+    <div class="container">
+        <h2 class="section-title">Get Started</h2>
+        <p class="section-lead">Four steps to reproduce every analysis in the book.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Clone the repository</h3>
+                <p>Download the companion data and resources.</p>
+                <code>git clone https://github.com/massimoaria/biblioshiny-book.git</code>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Install bibliometrix</h3>
+                <p>Install the R package from CRAN.</p>
+                <code>install.packages("bibliometrix")</code>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Launch Biblioshiny</h3>
+                <p>Start the web interface.</p>
+                <code>library(bibliometrix)<br>biblioshiny()</code>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h3>Load the data</h3>
+                <p>Import the Management Collection from the <code>datasets/</code> folder and follow along with the book.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Book</h4>
+                <p>
+                    Science Mapping Analysis<br>
+                    A Primer with Biblioshiny<br>
+                    ISBN 978-88-386-2297-7<br>
+                    McGraw-Hill Education, 2026
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="https://www.bibliometrix.org">bibliometrix.org</a>
+                <a href="https://cran.r-project.org/package=bibliometrix">CRAN Package</a>
+                <a href="https://github.com/massimoaria/biblioshiny-book">GitHub Repository</a>
+                <a href="https://www.mheducation.it">McGraw-Hill Education</a>
+            </div>
+            <div class="footer-col">
+                <h4>Authors</h4>
+                <p>
+                    Massimo Aria<br>
+                    <span style="color: rgba(255,255,255,0.35);">University of Naples Federico II</span>
+                </p>
+                <p style="margin-top: 10px;">
+                    Corrado Cuccurullo<br>
+                    <span style="color: rgba(255,255,255,0.35);">University of Campania Luigi Vanvitelli</span>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Massimo Aria & Corrado Cuccurullo</span>
+            <span>MIT License</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
