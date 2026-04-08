@@ -22,33 +22,52 @@
     <meta name="twitter:image" content="https://massimoaria.github.io/biblioshiny-book/book_cover.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #1a3a5c;
-            --primary-deep: #0d2137;
-            --primary-light: #2a5a8c;
-            --accent: #2ecc71;
-            --accent-dark: #27ae60;
-            --text: #2c3e50;
-            --text-light: #5a6c7d;
-            --text-muted: #8a9bac;
-            --bg: #f8fafb;
+            --ink: #1a1a2e;
+            --ink-deep: #0f0f1e;
+            --ink-mid: #2a2a45;
+            --gold: #c9963a;
+            --gold-light: #d4a853;
+            --gold-pale: #f0e0c0;
+            --gold-glow: rgba(201, 150, 58, 0.15);
+            --text: #2d2d3a;
+            --text-light: #5a5a6e;
+            --text-muted: #8a8a9a;
+            --bg: #faf8f5;
+            --bg-warm: #f5f2ed;
             --white: #ffffff;
-            --border: #e1e8ed;
+            --border: #e8e4de;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--sans);
             color: var(--text);
             line-height: 1.6;
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ---- Scroll Animations ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ---- Navigation ---- */
@@ -58,52 +77,97 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(13, 33, 55, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(15, 15, 30, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(201, 150, 58, 0.1);
+            transition: background 0.3s;
         }
 
         .nav-inner {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 56px;
+            height: 60px;
         }
 
         .nav-brand {
-            font-size: 0.9rem;
+            font-family: var(--serif);
+            font-size: 1rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
             letter-spacing: -0.01em;
         }
 
-        .nav-brand span { color: var(--accent); }
+        .nav-brand span { color: var(--gold); }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
+            font-family: var(--sans);
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.65);
+            color: rgba(255,255,255,0.55);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.25s;
+            letter-spacing: 0.02em;
         }
 
-        .nav-links a:hover { color: white; }
+        .nav-links a:hover { color: var(--gold-light); }
+
+        .nav-buy {
+            background: var(--gold);
+            color: var(--ink-deep) !important;
+            padding: 7px 18px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.25s, transform 0.2s !important;
+        }
+
+        .nav-buy:hover {
+            background: var(--gold-light) !important;
+            color: var(--ink-deep) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         /* ---- Hero ---- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 40%, var(--primary-light) 100%);
+            background: linear-gradient(160deg, var(--ink-deep) 0%, var(--ink) 45%, var(--ink-mid) 100%);
             color: white;
-            padding: 130px 0 100px;
+            padding: 140px 0 110px;
             position: relative;
             overflow: hidden;
         }
@@ -113,87 +177,166 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 15% 50%, rgba(46,204,113,0.06) 0%, transparent 50%),
-                radial-gradient(circle at 85% 20%, rgba(52,152,219,0.08) 0%, transparent 40%);
+                radial-gradient(ellipse at 20% 60%, rgba(201, 150, 58, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 20%, rgba(201, 150, 58, 0.04) 0%, transparent 45%);
         }
 
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
-            background-size: 36px 36px;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-deco {
+            position: absolute;
+            top: -60px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(201, 150, 58, 0.07);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-deco-2 {
+            position: absolute;
+            bottom: -120px;
+            left: -80px;
+            width: 350px;
+            height: 350px;
+            border: 1px solid rgba(201, 150, 58, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 28px;
             position: relative;
             z-index: 1;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 56px;
+            grid-template-columns: 300px 1fr;
+            gap: 64px;
             align-items: center;
         }
 
-        .cover-wrapper { position: relative; }
+        .cover-wrapper {
+            position: relative;
+            animation: coverFloat 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes coverFloat {
+            from { opacity: 0; transform: translateY(40px) rotate(-1deg); }
+            to { opacity: 1; transform: translateY(0) rotate(0); }
+        }
 
         .cover-wrapper img {
             width: 100%;
             border-radius: 4px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08);
-            transition: transform 0.3s;
+            box-shadow:
+                0 40px 80px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(201, 150, 58, 0.12),
+                0 0 60px rgba(201, 150, 58, 0.06);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .cover-wrapper:hover img { transform: translateY(-4px) scale(1.01); }
+        .cover-wrapper:hover img {
+            transform: translateY(-6px) scale(1.015);
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 18px;
+            right: -10px;
+            background: var(--gold);
+            color: var(--ink-deep);
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 18px 6px 14px;
+            z-index: 2;
+            box-shadow: 0 4px 16px rgba(201, 150, 58, 0.35);
+        }
+
+        .ribbon::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -6px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px 10px 0 0;
+            border-color: #a07a2e transparent transparent transparent;
+        }
+
+        .hero-text {
+            animation: heroTextIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+        }
+
+        @keyframes heroTextIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.08;
-            letter-spacing: -0.025em;
-            margin-bottom: 8px;
+            font-family: var(--serif);
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.06;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
         }
 
         .hero-text .subtitle {
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 22px;
+            font-family: var(--serif);
+            font-size: 1.45rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 24px;
         }
 
         .hero-text .authors {
             font-size: 1.05rem;
+            font-weight: 400;
             margin-bottom: 4px;
+            color: rgba(255,255,255,0.85);
         }
 
         .hero-text .authors strong { font-weight: 600; }
 
         .hero-text .affiliations {
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.45);
-            margin-bottom: 28px;
+            color: rgba(255,255,255,0.38);
+            margin-bottom: 30px;
+            letter-spacing: 0.01em;
         }
 
         .hero-badges {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
         }
 
         .badge {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.14);
-            padding: 6px 15px;
+            background: rgba(201, 150, 58, 0.1);
+            border: 1px solid rgba(201, 150, 58, 0.2);
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.85);
+            color: var(--gold-pale);
+            letter-spacing: 0.02em;
         }
 
         .cta-row {
@@ -205,101 +348,124 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 13px 26px;
+            gap: 9px;
+            padding: 14px 28px;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-family: var(--sans);
+            font-size: 0.92rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+            letter-spacing: 0.01em;
         }
 
-        .btn-accent {
-            background: var(--accent);
-            color: white;
+        .btn-gold {
+            background: var(--gold);
+            color: var(--ink-deep);
+            box-shadow: 0 4px 20px rgba(201, 150, 58, 0.25);
         }
 
-        .btn-accent:hover {
-            background: var(--accent-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 18px rgba(46,204,113,0.3);
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 150, 58, 0.35);
         }
 
         .btn-outline {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.06);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
         }
 
         .btn-outline:hover {
-            background: rgba(255,255,255,0.14);
-            transform: translateY(-1px);
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(201, 150, 58, 0.3);
+            transform: translateY(-2px);
         }
 
-        /* ---- Accent strip ---- */
+        /* ---- Gold accent strip ---- */
         .accent-strip {
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-dark), var(--accent));
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
         }
 
         /* ---- Quote ---- */
         .quote-section {
-            padding: 52px 0;
+            padding: 60px 0;
             background: var(--white);
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
 
         .quote-section blockquote {
-            font-size: 1.2rem;
+            font-family: var(--serif);
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--text-light);
-            max-width: 560px;
+            max-width: 580px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
         .quote-section cite {
             display: block;
-            margin-top: 10px;
-            font-size: 0.82rem;
+            margin-top: 14px;
+            font-family: var(--sans);
+            font-size: 0.8rem;
             color: var(--text-muted);
             font-style: normal;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         /* ---- Section base ---- */
-        .section { padding: 72px 0; }
+        .section { padding: 88px 0; }
         .section-white { background: var(--white); }
-        .section-gray { background: var(--bg); }
+        .section-warm { background: var(--bg); }
 
         .section-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 12px;
-            letter-spacing: -0.01em;
+            font-family: var(--serif);
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 14px;
+            letter-spacing: -0.015em;
         }
 
         .section-lead {
             font-size: 1.05rem;
             color: var(--text-light);
-            max-width: 620px;
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 3px;
+            background: var(--gold);
+            margin-top: 14px;
+            border-radius: 2px;
         }
 
         /* ---- About ---- */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 56px;
+            grid-template-columns: 1fr 360px;
+            gap: 64px;
             align-items: start;
         }
 
         .about-text p {
             font-size: 1rem;
             color: var(--text-light);
-            margin-bottom: 16px;
-            line-height: 1.75;
+            margin-bottom: 18px;
+            line-height: 1.8;
         }
+
+        .about-text strong { color: var(--text); }
 
         .stats-col {
             display: grid;
@@ -310,25 +476,30 @@
         .stat {
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 22px 16px;
+            border-radius: 12px;
+            padding: 26px 18px;
             text-align: center;
-            transition: border-color 0.2s;
+            transition: all 0.3s;
         }
 
-        .stat:hover { border-color: var(--accent); }
+        .stat:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
 
         .stat-num {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary);
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--ink);
             line-height: 1;
         }
 
         .stat-lbl {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             color: var(--text-muted);
-            margin-top: 4px;
+            margin-top: 6px;
+            letter-spacing: 0.02em;
         }
 
         /* ---- Contents ---- */
@@ -341,30 +512,48 @@
         .part-card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 24px 20px;
-            transition: all 0.2s;
+            border-radius: 12px;
+            padding: 28px 22px;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
         }
 
+        .part-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .part-card:hover::before { transform: scaleX(1); }
+
         .part-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.07);
         }
 
         .part-label {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent-dark);
-            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            margin-bottom: 10px;
         }
 
         .part-card h3 {
-            font-size: 1rem;
+            font-family: var(--serif);
+            font-size: 1.05rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 12px;
+            color: var(--ink);
+            margin-bottom: 14px;
         }
 
         .ch-list { list-style: none; }
@@ -372,8 +561,8 @@
         .ch-list li {
             font-size: 0.84rem;
             color: var(--text-light);
-            padding: 4px 0;
-            border-bottom: 1px solid #f0f2f4;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0ede8;
         }
 
         .ch-list li:last-child { border-bottom: none; }
@@ -389,24 +578,50 @@
         .audience-card {
             background: var(--bg);
             border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px 24px;
+            transition: all 0.3s;
+        }
+
+        .audience-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
+
+        .audience-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-glow);
             border-radius: 10px;
-            padding: 28px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .audience-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
         }
 
         .audience-card h3 {
-            font-size: 0.95rem;
+            font-family: var(--serif);
+            font-size: 1rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 6px;
+            color: var(--ink);
+            margin-bottom: 8px;
         }
 
         .audience-card p {
             font-size: 0.85rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
-        /* ---- Companion (repository) ---- */
+        /* ---- Companion ---- */
         .repo-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -416,29 +631,37 @@
         .repo-card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 28px 24px;
+            border-radius: 12px;
+            padding: 30px 26px;
+            transition: all 0.3s;
+        }
+
+        .repo-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px var(--gold-glow);
         }
 
         .repo-card h3 {
-            font-size: 1rem;
+            font-family: var(--serif);
+            font-size: 1.05rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
+            color: var(--ink);
+            margin-bottom: 10px;
         }
 
         .repo-card p {
             font-size: 0.88rem;
             color: var(--text-light);
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
         .repo-card code {
-            background: var(--bg);
-            padding: 2px 7px;
+            background: var(--bg-warm);
+            padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.82rem;
-            color: var(--primary);
+            color: var(--ink);
+            border: 1px solid var(--border);
         }
 
         /* ---- Getting started ---- */
@@ -451,113 +674,229 @@
         .step {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 24px 20px;
+            border-radius: 12px;
+            padding: 28px 22px;
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px var(--gold-glow);
         }
 
         .step-num {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: var(--primary);
-            color: white;
+            width: 36px;
+            height: 36px;
+            background: var(--ink);
+            color: var(--gold-light);
             border-radius: 50%;
-            font-size: 0.82rem;
+            font-family: var(--serif);
+            font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .step h3 {
-            font-size: 0.92rem;
+            font-family: var(--serif);
+            font-size: 0.95rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--ink);
             margin-bottom: 8px;
         }
 
         .step p {
             font-size: 0.84rem;
             color: var(--text-light);
-            line-height: 1.55;
+            line-height: 1.6;
         }
 
         .step code {
             display: block;
-            background: var(--primary-deep);
-            color: var(--accent);
-            padding: 10px 14px;
-            border-radius: 6px;
+            background: var(--ink-deep);
+            color: var(--gold-light);
+            padding: 12px 16px;
+            border-radius: 8px;
             font-size: 0.78rem;
-            margin-top: 10px;
+            margin-top: 12px;
             overflow-x: auto;
+            border: 1px solid rgba(201, 150, 58, 0.12);
+        }
+
+        /* ---- CTA Banner ---- */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--ink-deep) 0%, var(--ink) 60%, var(--ink-mid) 100%);
+            padding: 72px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(201, 150, 58, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .cta-banner h2 {
+            font-family: var(--serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .cta-banner p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-gold {
+            background: var(--gold);
+            color: var(--ink-deep);
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 24px rgba(201, 150, 58, 0.3);
+        }
+
+        .btn-cta-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 36px rgba(201, 150, 58, 0.4);
+        }
+
+        .btn-cta-outline {
+            background: rgba(255,255,255,0.06);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.18);
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s;
+        }
+
+        .btn-cta-outline:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(201, 150, 58, 0.3);
+            transform: translateY(-2px);
         }
 
         /* ---- Footer ---- */
         footer {
-            background: var(--primary-deep);
-            color: rgba(255,255,255,0.5);
-            padding: 48px 0;
+            background: var(--ink-deep);
+            color: rgba(255,255,255,0.45);
+            padding: 56px 0;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
         }
 
         .footer-col h4 {
-            font-size: 0.78rem;
+            font-family: var(--sans);
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 14px;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 16px;
         }
 
         .footer-col a {
             display: block;
             font-size: 0.88rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.55);
             text-decoration: none;
-            padding: 3px 0;
-            transition: color 0.2s;
+            padding: 4px 0;
+            transition: color 0.25s;
         }
 
-        .footer-col a:hover { color: white; }
+        .footer-col a:hover { color: var(--gold-light); }
 
         .footer-col p {
             font-size: 0.88rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .footer-bottom {
-            margin-top: 36px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(201, 150, 58, 0.1);
             display: flex;
             justify-content: space-between;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
+            color: rgba(255,255,255,0.3);
         }
 
         /* ---- Responsive ---- */
         @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 220px 1fr; gap: 36px; }
+            .hero-grid { grid-template-columns: 240px 1fr; gap: 40px; }
             .parts-grid, .steps { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .hero { padding: 100px 0 64px; }
+            .hero { padding: 110px 0 72px; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .cover-wrapper { max-width: 220px; margin: 0 auto; }
-            .hero-text h1 { font-size: 2.2rem; }
+            .cover-wrapper { max-width: 240px; margin: 0 auto; }
+            .hero-text h1 { font-size: 2.4rem; }
             .hero-badges, .cta-row { justify-content: center; }
             .parts-grid, .audience-grid, .repo-grid, .steps, .footer-grid {
                 grid-template-columns: 1fr;
             }
             .stats-col { grid-template-columns: repeat(4, 1fr); }
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 15, 30, 0.98);
+                flex-direction: column;
+                padding: 20px 28px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(201, 150, 58, 0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .section { padding: 64px 0; }
+            .section-title { font-size: 1.7rem; }
+            .cta-banner h2 { font-size: 1.6rem; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2rem; }
+            .stats-col { grid-template-columns: repeat(2, 1fr); }
+            .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -566,7 +905,10 @@
 <!-- Nav -->
 <nav>
     <div class="nav-inner">
-        <a href="#" class="nav-brand"><span>biblioshiny</span>-book</a>
+        <a href="#" class="nav-brand">Science Mapping <span>Analysis</span></a>
+        <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#contents">Contents</a></li>
@@ -574,16 +916,20 @@
             <li><a href="#companion">Companion</a></li>
             <li><a href="#start">Get Started</a></li>
             <li><a href="https://www.bibliometrix.org">bibliometrix.org</a></li>
+            <li><a href="https://www.amazon.it/dp/8838622973?ref=nosim&tag=mhitaly02-21" class="nav-buy">Buy Now</a></li>
         </ul>
     </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
+    <div class="hero-deco"></div>
+    <div class="hero-deco-2"></div>
     <div class="container">
         <div class="hero-grid">
             <div class="cover-wrapper">
-                <img src="book_cover.png" alt="Science Mapping Analysis — Book Cover">
+                <div class="ribbon">Available Now</div>
+                <img src="book_cover.png" alt="Science Mapping Analysis — Book Cover" width="300" height="420">
             </div>
             <div class="hero-text">
                 <h1>Science Mapping<br>Analysis</h1>
@@ -601,9 +947,13 @@
                     <span class="badge">ISBN 978-88-386-2297-7</span>
                 </div>
                 <div class="cta-row">
-                    <a href="https://www.mheducation.it" class="btn btn-accent">
+                    <a href="https://www.amazon.it/dp/8838622973?ref=nosim&tag=mhitaly02-21" class="btn btn-gold">
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                        Buy the Book
+                        Buy on Amazon
+                    </a>
+                    <a href="https://www.mheducation.it/science-mapping-analysis-9788838622977-italy" class="btn btn-outline">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        McGraw-Hill
                     </a>
                     <a href="https://github.com/massimoaria/biblioshiny-book" class="btn btn-outline">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -633,7 +983,7 @@
 <section id="about" class="section section-white">
     <div class="container">
         <div class="about-grid">
-            <div class="about-text">
+            <div class="about-text reveal">
                 <h2 class="section-title">About the Book</h2>
                 <p>
                     Every year, millions of scientific articles are published across thousands of journals. How can researchers navigate this ocean of knowledge, identify the most influential works, and uncover the hidden structures that shape a scientific field?
@@ -648,7 +998,7 @@
                     A common example runs through all chapters, showing how different techniques illuminate different facets of the same field. Mathematical formulations are included where they clarify the logic; worked examples make every analysis immediately reproducible.
                 </p>
             </div>
-            <div class="stats-col">
+            <div class="stats-col reveal" style="transition-delay: 0.15s;">
                 <div class="stat">
                     <div class="stat-num">180+</div>
                     <div class="stat-lbl">Countries using bibliometrix</div>
@@ -671,21 +1021,21 @@
 </section>
 
 <!-- Contents -->
-<section id="contents" class="section section-gray">
+<section id="contents" class="section section-warm">
     <div class="container">
-        <h2 class="section-title">Contents</h2>
-        <p class="section-lead">Eleven chapters following the natural arc of a complete science mapping analysis.</p>
+        <h2 class="section-title reveal">Contents</h2>
+        <p class="section-lead reveal" style="transition-delay: 0.1s;">Eleven chapters following the natural arc of a complete science mapping analysis.</p>
         <div class="parts-grid">
-            <div class="part-card">
+            <div class="part-card reveal" style="transition-delay: 0.1s;">
                 <div class="part-label">Part A — Chapters 1–3</div>
-                <h3>Foundations & Tools</h3>
+                <h3>Foundations &amp; Tools</h3>
                 <ul class="ch-list">
                     <li><strong>1.</strong> Introduction to Science Mapping</li>
                     <li><strong>2.</strong> Introducing Biblioshiny</li>
                     <li><strong>3.</strong> Bibliographic Databases</li>
                 </ul>
             </div>
-            <div class="part-card">
+            <div class="part-card reveal" style="transition-delay: 0.2s;">
                 <div class="part-label">Part B — Chapters 4–7</div>
                 <h3>Focus on Domain</h3>
                 <ul class="ch-list">
@@ -695,7 +1045,7 @@
                     <li><strong>7.</strong> Documents</li>
                 </ul>
             </div>
-            <div class="part-card">
+            <div class="part-card reveal" style="transition-delay: 0.3s;">
                 <div class="part-label">Part C — Chapters 8–10</div>
                 <h3>Knowledge Structures</h3>
                 <ul class="ch-list">
@@ -704,7 +1054,7 @@
                     <li><strong>10.</strong> Social Structure</li>
                 </ul>
             </div>
-            <div class="part-card">
+            <div class="part-card reveal" style="transition-delay: 0.4s;">
                 <div class="part-label">Part D — Chapter 11</div>
                 <h3>Content Analysis</h3>
                 <ul class="ch-list">
@@ -718,30 +1068,48 @@
 <!-- Audience -->
 <section id="audience" class="section section-white">
     <div class="container">
-        <h2 class="section-title">Who This Book Is For</h2>
-        <p class="section-lead">From PhD students to research managers, across all disciplines. No prior programming experience is required.</p>
+        <h2 class="section-title reveal">Who This Book Is For</h2>
+        <p class="section-lead reveal" style="transition-delay: 0.1s;">From PhD students to research managers, across all disciplines. No prior programming experience is required.</p>
         <div class="audience-grid">
-            <div class="audience-card">
+            <div class="audience-card reveal" style="transition-delay: 0.1s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </div>
                 <h3>Researchers</h3>
                 <p>Conduct systematic, evidence-based literature reviews across any discipline. Go beyond narrative approaches with quantitative methods that reveal the structure of your field.</p>
             </div>
-            <div class="audience-card">
-                <h3>PhD Students & Early-Career Researchers</h3>
+            <div class="audience-card reveal" style="transition-delay: 0.2s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <h3>PhD Students &amp; Early-Career</h3>
                 <p>Navigate your research landscape from day one. Identify the most influential works, dominant themes, and key scholarly communities.</p>
             </div>
-            <div class="audience-card">
-                <h3>Research Managers & Policymakers</h3>
+            <div class="audience-card reveal" style="transition-delay: 0.3s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <h3>Research Managers &amp; Policymakers</h3>
                 <p>Assess the structure and dynamics of research areas for strategic planning, resource allocation, and research evaluation.</p>
             </div>
-            <div class="audience-card">
-                <h3>Librarians & Information Professionals</h3>
+            <div class="audience-card reveal" style="transition-delay: 0.4s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                </div>
+                <h3>Librarians &amp; Information Professionals</h3>
                 <p>A comprehensive reference to bibliometric methods and the tools available to support researchers in conducting bibliometric analyses.</p>
             </div>
-            <div class="audience-card">
-                <h3>Instructors & Course Designers</h3>
+            <div class="audience-card reveal" style="transition-delay: 0.5s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h3>Instructors &amp; Course Designers</h3>
                 <p>A textbook that combines theoretical rigour with practical application for teaching research methods, quantitative literature reviewing, or bibliometrics.</p>
             </div>
-            <div class="audience-card">
+            <div class="audience-card reveal" style="transition-delay: 0.6s;">
+                <div class="audience-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                </div>
                 <h3>All Disciplines</h3>
                 <p>Whether you are a management scholar, a health scientist, a computer scientist, or an environmental researcher — the methods presented here apply directly to your domain.</p>
             </div>
@@ -750,25 +1118,25 @@
 </section>
 
 <!-- Companion -->
-<section id="companion" class="section section-gray">
+<section id="companion" class="section section-warm">
     <div class="container">
-        <h2 class="section-title">Book Companion</h2>
-        <p class="section-lead">This repository contains everything you need to reproduce every analysis presented in the book.</p>
+        <h2 class="section-title reveal">Book Companion</h2>
+        <p class="section-lead reveal" style="transition-delay: 0.1s;">This repository contains everything you need to reproduce every analysis presented in the book.</p>
         <div class="repo-grid">
-            <div class="repo-card">
+            <div class="repo-card reveal" style="transition-delay: 0.1s;">
                 <h3>The Management Collection</h3>
                 <p>All applied examples use a common dataset — a collection of bibliometric and scientometric research articles retrieved from the Web of Science. Available as a pre-processed <code>.rdata</code> file and as raw export files.</p>
             </div>
-            <div class="repo-card">
+            <div class="repo-card reveal" style="transition-delay: 0.2s;">
                 <h3>Content Analysis Sources</h3>
-                <p>Pre-processed plain-text files for Chapter 11, extracted from two foundational works: Ramos-Rodriguez & Ruiz-Navarro (2004) and Zupic & Cater (2015).</p>
+                <p>Pre-processed plain-text files for Chapter 11, extracted from two foundational works: Ramos-Rodriguez &amp; Ruiz-Navarro (2004) and Zupic &amp; Cater (2015).</p>
             </div>
-            <div class="repo-card">
+            <div class="repo-card reveal" style="transition-delay: 0.15s;">
                 <h3>Text Pre-processing Resources</h3>
                 <p>Custom stopword lists and synonym dictionaries used in the content analysis workflows, plus a complete field tag reference for bibliographic databases.</p>
             </div>
-            <div class="repo-card">
-                <h3>Open & Reproducible</h3>
+            <div class="repo-card reveal" style="transition-delay: 0.25s;">
+                <h3>Open &amp; Reproducible</h3>
                 <p>All materials are released under the MIT License. Clone the repository, load the data into Biblioshiny, and follow along chapter by chapter.</p>
             </div>
         </div>
@@ -778,32 +1146,50 @@
 <!-- Get started -->
 <section id="start" class="section section-white">
     <div class="container">
-        <h2 class="section-title">Get Started</h2>
-        <p class="section-lead">Four steps to reproduce every analysis in the book.</p>
+        <h2 class="section-title reveal">Get Started</h2>
+        <p class="section-lead reveal" style="transition-delay: 0.1s;">Four steps to reproduce every analysis in the book.</p>
         <div class="steps">
-            <div class="step">
+            <div class="step reveal" style="transition-delay: 0.1s;">
                 <div class="step-num">1</div>
                 <h3>Clone the repository</h3>
                 <p>Download the companion data and resources.</p>
                 <code>git clone https://github.com/massimoaria/biblioshiny-book.git</code>
             </div>
-            <div class="step">
+            <div class="step reveal" style="transition-delay: 0.2s;">
                 <div class="step-num">2</div>
                 <h3>Install bibliometrix</h3>
                 <p>Install the R package from CRAN.</p>
                 <code>install.packages("bibliometrix")</code>
             </div>
-            <div class="step">
+            <div class="step reveal" style="transition-delay: 0.3s;">
                 <div class="step-num">3</div>
                 <h3>Launch Biblioshiny</h3>
                 <p>Start the web interface.</p>
                 <code>library(bibliometrix)<br>biblioshiny()</code>
             </div>
-            <div class="step">
+            <div class="step reveal" style="transition-delay: 0.4s;">
                 <div class="step-num">4</div>
                 <h3>Load the data</h3>
                 <p>Import the Management Collection from the <code>datasets/</code> folder and follow along with the book.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="container reveal">
+        <h2>Get Your Copy Today</h2>
+        <p>Available now from Amazon and McGraw-Hill Education</p>
+        <div class="cta-buttons">
+            <a href="https://www.amazon.it/dp/8838622973?ref=nosim&tag=mhitaly02-21" class="btn-cta-gold">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                Buy on Amazon
+            </a>
+            <a href="https://www.mheducation.it/science-mapping-analysis-9788838622977-italy" class="btn-cta-outline">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                McGraw-Hill Official Page
+            </a>
         </div>
     </div>
 </section>
@@ -823,29 +1209,46 @@
             </div>
             <div class="footer-col">
                 <h4>Links</h4>
+                <a href="https://www.amazon.it/dp/8838622973?ref=nosim&tag=mhitaly02-21">Buy on Amazon</a>
+                <a href="https://www.mheducation.it/science-mapping-analysis-9788838622977-italy">McGraw-Hill Official Page</a>
                 <a href="https://www.bibliometrix.org">bibliometrix.org</a>
                 <a href="https://cran.r-project.org/package=bibliometrix">CRAN Package</a>
                 <a href="https://github.com/massimoaria/biblioshiny-book">GitHub Repository</a>
-                <a href="https://www.mheducation.it">McGraw-Hill Education</a>
             </div>
             <div class="footer-col">
                 <h4>Authors</h4>
                 <p>
                     Massimo Aria<br>
-                    <span style="color: rgba(255,255,255,0.35);">University of Naples Federico II</span>
+                    <span style="color: rgba(255,255,255,0.3);">University of Naples Federico II</span>
                 </p>
-                <p style="margin-top: 10px;">
+                <p style="margin-top: 12px;">
                     Corrado Cuccurullo<br>
-                    <span style="color: rgba(255,255,255,0.35);">University of Campania Luigi Vanvitelli</span>
+                    <span style="color: rgba(255,255,255,0.3);">University of Campania Luigi Vanvitelli</span>
                 </p>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 Massimo Aria & Corrado Cuccurullo</span>
+            <span>&copy; 2026 Massimo Aria &amp; Corrado Cuccurullo</span>
             <span>MIT License</span>
         </div>
     </div>
 </footer>
+
+<!-- Scroll reveal -->
+<script>
+(function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+</script>
 
 </body>
 </html>
