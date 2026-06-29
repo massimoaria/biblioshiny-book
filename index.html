@@ -34,6 +34,8 @@
             --gold-light: #d4a853;
             --gold-pale: #f0e0c0;
             --gold-glow: rgba(201, 150, 58, 0.15);
+            --teal: #2a7d6f;
+            --teal-light: #339384;
             --text: #2d2d3a;
             --text-light: #5a5a6e;
             --text-muted: #8a8a9a;
@@ -381,6 +383,18 @@
             background: rgba(255,255,255,0.12);
             border-color: rgba(201, 150, 58, 0.3);
             transform: translateY(-2px);
+        }
+
+        .btn-ebook {
+            background: var(--teal);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(42, 125, 111, 0.28);
+        }
+
+        .btn-ebook:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(42, 125, 111, 0.38);
         }
 
         /* ---- Gold accent strip ---- */
@@ -807,6 +821,28 @@
             transform: translateY(-2px);
         }
 
+        .btn-cta-ebook {
+            background: var(--teal);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: var(--sans);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 24px rgba(42, 125, 111, 0.32);
+        }
+
+        .btn-cta-ebook:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 36px rgba(42, 125, 111, 0.42);
+        }
+
         /* ---- Footer ---- */
         footer {
             background: var(--ink-deep);
@@ -951,7 +987,7 @@
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                         Buy on Amazon
                     </a>
-                    <a href="https://www.kobo.com/es/en/ebook/science-mapping-analysis?sId=5dda4bf1-79b2-4f0b-a030-9def8147c369&ssId=qJwWN0foBBI-zkxpg6dzw" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.kobo.com/es/en/ebook/science-mapping-analysis?sId=5dda4bf1-79b2-4f0b-a030-9def8147c369&ssId=qJwWN0foBBI-zkxpg6dzw" class="btn btn-ebook" target="_blank" rel="noopener noreferrer">
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
                         Buy eBook
                     </a>
@@ -1190,7 +1226,7 @@
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                 Buy on Amazon
             </a>
-            <a href="https://www.kobo.com/es/en/ebook/science-mapping-analysis?sId=5dda4bf1-79b2-4f0b-a030-9def8147c369&ssId=qJwWN0foBBI-zkxpg6dzw" class="btn-cta-outline" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.kobo.com/es/en/ebook/science-mapping-analysis?sId=5dda4bf1-79b2-4f0b-a030-9def8147c369&ssId=qJwWN0foBBI-zkxpg6dzw" class="btn-cta-ebook" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
                 Buy eBook (Kobo)
             </a>
